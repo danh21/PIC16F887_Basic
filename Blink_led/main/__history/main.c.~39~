@@ -1,0 +1,21 @@
+#include <main.h>
+
+void blink(int8 led, int8 ms) {
+   output_high(led);   // LED on
+   delay_ms(ms);  
+   output_low(led);    // LED off
+   delay_ms(ms);
+}
+
+void main()
+{
+   while(TRUE)
+   {
+      blink(PIN_B0, 1000);
+//!      blink(PIN_B1, 1000);
+//!      output_high(PIN_B0);
+//!      delay_ms(1000);
+//!      output_low(PIN_B0);
+//!      delay_ms(1000);
+   }
+}

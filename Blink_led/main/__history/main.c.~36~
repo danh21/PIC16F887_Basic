@@ -1,0 +1,15 @@
+#include <main.h>
+
+
+void main()
+{
+   while(TRUE)
+   {
+      blink(PIN_B0, 1000);
+//!      blink(PIN_B1, 1000);
+//!      output_bit(PIN_B0, 1);
+//!      delay_ms(1000);
+//!      output_bit(PIN_B0, 0);
+//!      delay_ms(1000);
+   }
+}

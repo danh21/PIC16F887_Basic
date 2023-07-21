@@ -1,0 +1,16 @@
+#include <main.h>
+
+void blink(unsigned int led, unsigned int ms) {
+   output_high(led);   // LED on
+   delay_ms(ms);  
+   output_low(led);    // LED off
+   delay_ms(ms);
+}
+
+void main()
+{
+   while(TRUE)
+   {
+      blink(PIN_B1, 1000);
+   }
+}

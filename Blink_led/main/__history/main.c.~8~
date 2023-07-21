@@ -1,0 +1,11 @@
+#include <main.h>
+void main()
+{
+   while(TRUE)
+   {
+      LED(0);   // LED off
+      delay_ms (100);  
+      LED(1);   // LED on
+      delay_ms (100);
+   }
+}
