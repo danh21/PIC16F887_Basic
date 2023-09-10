@@ -16,15 +16,16 @@ BuildRequired=1
 Include=D:\phan_mem\PICC\Devices\;D:\phan_mem\PICC\Drivers\
 Library=
 LinkerScript=
-[D:\cd\kien truc va to chuc may tinh\PIC 16F877A\3Codes\led blink\main]
+[D:\cd\PIC 16F877A\Designs\PIC C\74hc595_ctrl_leds\main]
 Type=4
 [mru-list]
 1=main.c
 [Opened Files]
 1=main.c
 2=main.h
-3=..\..\..\..\..\..\phan_mem\PICC\Devices\16F877A.h
-4=
+3=74HC595.h
+4=..\..\..\..\..\..\phan_mem\PICC\Devices\16F877A.h
+5=
 [main.c]
 Type=4
 Path=

@@ -1,0 +1,14 @@
+#include <main.h>
+
+void main() {
+   int bit = 1;
+     
+   while(TRUE) {
+      //TODO: User Code
+      Data(bit);
+      Shift_CLK(0); Shift_CLK(1);
+      Latch_CLK(0); Latch_CLK(1);
+      bit = ~bit;
+      delay_ms(100);
+   }
+}

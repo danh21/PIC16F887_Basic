@@ -1,12 +1,33 @@
 #include <main.h>
 
-void main()
-{
-   while(TRUE)
-   {
-      output_high(PIN_B0);   // LED on
-      delay_ms(1000);  
-      output_low(PIN_B0);    // LED off
-      delay_ms(1000);
+void main() {
+   Data_Out(0x00);
+   delay_ms(200);
+   
+   while(TRUE) {
+      Data_Out(0b00000001);
+      delay_ms(200);  
+      
+      Data_Out(0b00000011);
+      delay_ms(200);
+      
+      Data_Out(0b00000111);
+      delay_ms(200);
+      
+      Data_Out(0b00001111);
+      delay_ms(200);
+      
+      Data_Out(0b00011111);
+      delay_ms(200);
+      
+      Data_Out(0b00111111);
+      delay_ms(200);
+      
+      Data_Out(0b01111111);
+      delay_ms(200);
+      
+      Data_Out(0b11111111);
+      delay_ms(200);
+      
    }
 }

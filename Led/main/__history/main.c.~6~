@@ -1,13 +1,14 @@
 #include <main.h>
 
-void main()
-{
-   while(TRUE)
-   {
-      output_high (PIN_B0);   // LED on
-      delay_ms (1000);  
-      output_low (PIN_B0); // LED off
-      delay_ms (1000);
+void main() {
+   int bit = 1;
+     
+   while(TRUE) {
+      //TODO: User Code
+      Data(bit);
+      Shift_CLK(0); Shift_CLK(1);
+      Latch_CLK(0); Latch_CLK(1);
+      bit = !bit;
+      delay_ms(500);
    }
-
 }

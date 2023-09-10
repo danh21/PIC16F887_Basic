@@ -1,9 +1,0 @@
-#include <main.h>
-
-void main()
-{
-   while (TRUE)
-   {
-      blink_leds(0xFF, 500);
-   }
-}

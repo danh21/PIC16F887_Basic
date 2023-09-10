@@ -1,0 +1,10 @@
+#include <main.h>
+
+void main() {
+   while(TRUE) {
+      //TODO: User Code
+      Data(1);
+      Shift_CLK(0); Shift_CLK(1);
+      Latch_CLK(0); Latch_CLK(1);
+   }
+}

@@ -1,16 +1,59 @@
 #include <main.h>
 
-void blink(unsigned int led, unsigned int ms) {
-   output_high(led);   // LED on
-   delay_ms(ms);  
-   output_low(led);    // LED off
-   delay_ms(ms);
-}
-
-void main()
-{
-   while(TRUE)
-   {
-      blink(PIN_B1, 1000);
+void main() {
+   char arrData[2] = {0x01, 0x80};
+   //Data_Out(0x01);
+   Data_Outs(arrData);
+   
+   while(TRUE) {
+      /* // on gradually off gradually
+      Data_Out(0b00000000);
+      delay_ms(200);
+      
+      Data_Out(0b00000001);
+      delay_ms(200);  
+      
+      Data_Out(0b00000011);
+      delay_ms(200);
+      
+      Data_Out(0b00000111);
+      delay_ms(200);
+      
+      Data_Out(0b00001111);
+      delay_ms(200);
+      
+      Data_Out(0b00011111);
+      delay_ms(200);
+      
+      Data_Out(0b00111111);
+      delay_ms(200);
+      
+      Data_Out(0b01111111);
+      delay_ms(200);
+      
+      Data_Out(0b11111111);
+      delay_ms(200);
+      
+      Data_Out(0b11111110);
+      delay_ms(200);
+      
+      Data_Out(0b11111100);
+      delay_ms(200);
+      
+      Data_Out(0b11111000);
+      delay_ms(200);
+      
+      Data_Out(0b11110000);
+      delay_ms(200);
+      
+      Data_Out(0b11100000);
+      delay_ms(200);
+      
+      Data_Out(0b11000000);
+      delay_ms(200);
+      
+      Data_Out(0b10000000);
+      delay_ms(200); 
+      */
    }
 }

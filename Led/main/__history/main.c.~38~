@@ -1,15 +1,16 @@
 #include <main.h>
 
+void main() {
+   char arr[2] = {0x80, 0x55};
+   
+   send_bytes(arr);
 
-void main()
-{
-   while(TRUE)
-   {
-//!      blink(PIN_B0, 1000);
-//!      blink(PIN_B1, 1000);
-      output_high(PIN_B0);
-      delay_ms(1000);
-      output_low(PIN_B0);
-      delay_ms(1000);
+   delay_ms(1000);
+   Reset;
+   
+   while(TRUE) {
+      // on gradually, off gradually
+      lightUp_fadeDown();
    }
+      
 }

@@ -1,0 +1,87 @@
+/* --------------------------------- CONFIG --------------------------------- */
+#define SH_CP  PIN_C0
+#define DS     PIN_C1
+#define ST_CP  PIN_C2
+
+
+
+/* --------------------------------- FUNCTION --------------------------------- */
+#define Shift_CLK(x)    output_bit(SH_CP, x)
+#define Serial_Data(x)  output_bit(DS, x)
+#define Latch_CLK(x)    output_bit(ST_CP, x)
+
+#define Shift_CLK_transition {Shift_CLK(0); Shift_CLK(1);}
+#define Latch_CLK_transition {Latch_CLK(0); Latch_CLK(1);}
+
+
+
+void send_bit(int1 bit)    
+{ 
+   Serial_Data(bit);
+   Shift_CLK_transition;    
+   Latch_CLK_transition;
+}
+
+
+
+void send_byte(int8 byte)
+{
+   Serial_Data(1);
+   Shift_CLK_transition;
+   
+   Serial_Data((byte>>6) & 0x01);
+   Shift_CLK_transition;
+   
+   Serial_Data((byte>>5) & 0x01);
+   Shift_CLK_transition;
+   
+   Serial_Data((byte>>4) & 0x01);
+   Shift_CLK_transition;
+   
+   Serial_Data((byte>>3) & 0x01);
+   Shift_CLK_transition;
+   
+   Serial_Data((byte>>2) & 0x01);
+   Shift_CLK_transition;
+   
+   Serial_Data((byte>>1) & 0x01);
+   Shift_CLK_transition;
+   
+   Serial_Data((byte>>0) & 0x01);
+   Shift_CLK_transition;
+   
+   Latch_CLK_transition;
+}
+
+
+
+void Data_Outs(char arrData[], lenOfArr)     // for many ICs 74HC595 
+{ 
+   for(int i = 0; i < lenOfArr; i++) {
+      Serial_Data((arrData[i]>>7) & 0x01);
+      Shift_CLK_transition;
+      
+      Serial_Data((arrData[i]>>6) & 0x01);
+      Shift_CLK_transition;
+      
+      Serial_Data((arrData[i]>>5) & 0x01);
+      Shift_CLK_transition;
+      
+      Serial_Data((arrData[i]>>4) & 0x01);
+      Shift_CLK_transition;
+      
+      Serial_Data((arrData[i]>>3) & 0x01);
+      Shift_CLK_transition;
+      
+      Serial_Data((arrData[i]>>2) & 0x01);
+      Shift_CLK_transition;
+      
+      Serial_Data((arrData[i]>>1) & 0x01);
+      Shift_CLK_transition;
+      
+      Serial_Data((arrData[i]>>0) & 0x01);
+      Shift_CLK_transition;
+      
+      Latch_CLK_transition;
+   } 
+}

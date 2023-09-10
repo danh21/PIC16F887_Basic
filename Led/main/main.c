@@ -1,13 +1,15 @@
 #include <main.h>
 
-void main()
-{
-   while (TRUE)
-   {
-         blink_leds(0xAA, 500, 2);
-         
-         run_leds_l2r(500, 1);
-         
-         run_leds_r2l(500, 1);
+void main() {
+   char arr[3] = {0x80, 0x55, 0x01};
+   
+   send_bytes(arr, 3);
+   delay_ms(1000);
+   Reset;
+   
+   while(TRUE) {
+      // on gradually, off gradually
+      lightUp_fadeDown();
    }
+      
 }

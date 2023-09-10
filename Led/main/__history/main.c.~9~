@@ -1,11 +1,14 @@
 #include <main.h>
-void main()
-{
-   while(TRUE)
-   {
-      LED(1);   // LED on
-      delay_ms (100);  
-      LED(0);   // LED off
-      delay_ms (100);
+
+void main() {
+   int bit = 1;
+     
+   while(TRUE) {
+      //TODO: User Code
+      Serial_Data(bit);
+      Shift_CLK(0); Shift_CLK(1); // A low– to–high transition on this input causes the data at the Serial Input pin to be shifted into the 8–bit shift register
+      Latch_CLK(0); Latch_CLK(1); // A low–to–high transition on this input latches the shift register data
+      bit = !bit;                 // Interleave
+      delay_ms(500);
    }
 }
