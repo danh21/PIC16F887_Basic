@@ -1,0 +1,8 @@
+#include <main.h>
+
+void main() {
+   while(TRUE) {
+      //TODO: User Code
+      Led7Seg_OUT(1);
+   }
+}

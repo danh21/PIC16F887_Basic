@@ -11,3 +11,6 @@
     - Button: 
         + Version 1: uses buttons (on, off, toggle) to control led.
         + Version 2: uses buttons to simulate PIV sensors. When sensors detect, buzzers and leds are activated.
+
+    - Counter:
+        + Version 1: uses 74LS47 IC to decode to display number on 1 led 7-segment.

@@ -1,0 +1,15 @@
+#include <main.h>
+
+void main() {
+   unsigned char count = 0;
+
+   while(TRUE) {
+      //TODO: User Code
+      while(count < 10) {
+         Led7Seg_OUT(count++);
+         output_high(PIN_B0);  
+         delay_ms(500);
+      }
+      count = 0;
+   }
+}
