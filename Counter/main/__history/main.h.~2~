@@ -7,10 +7,7 @@
 
 #use delay(crystal=20000000)
 
-#define LS47_A PIN_C0
+#define Led7Seg_OUT(num) output_d(num)
 
-
-#define LS47_A(x) output_bit(PIN_C0, x)
-#define LS47_B(x) output_bit(PIN_C1, x)
-#define LS47_C(x) output_bit(PIN_C2, x)
-#define LS47_D(x) output_bit(PIN_C3, x)
+#define Led7Seg1(b) output_bit(PIN_B0, b)
+#define Led7Seg2(b) output_bit(PIN_B1, b)

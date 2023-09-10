@@ -5,30 +5,21 @@
 #FUSES NOBROWNOUT               //No brownout reset
 #FUSES NOLVP                    //No low voltage prgming, B3(PIC16) or B5(PIC18) used for I/O
 
-#use delay(crystal=20000000)
+#use delay(crystal=20M)
 
 
 
-#include "74ls47.h"
+#include "Led7seg_2dig.h"
 
 
 
 void countUp(void)
 {
-   unsigned char count = 0;   
-   while (count < 9) {
-      Led7Seg_OUT(count++);         
-      delay_ms(500);
-   }
-}
-
-
-
-void countDown(void)
-{
-   unsigned char count = 9;  
-   while (count > 0) {
-      Led7Seg_OUT(count--);
-      delay_ms(500);
-   }
+   int count, t;
+   
+   for (count = 0; count < 100; count++) {
+      t = 0;
+      while (t++ < 200) 
+         display_led7seg(count);    
+   } 
 }

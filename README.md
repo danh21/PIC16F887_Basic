@@ -13,4 +13,4 @@
         + Version 2: uses buttons to simulate PIV sensors. When sensors detect, buzzers and leds are activated.
 
     - Counter:
-        + Version 1: uses 74LS47 IC to decode to display number on 1 led 7-segment.
+        + Version 1: uses 74LS47 IC to decode to display number on 1 led 7-segment, then counts up and counts down.

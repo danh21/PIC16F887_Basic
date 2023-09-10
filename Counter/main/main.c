@@ -1,11 +1,10 @@
 #include <main.h>
 
-void main() 
-{
-   while (TRUE) 
+void main()
+{  
+   while (TRUE)
    {
       //TODO: User Code
-      countUp();     
-      countDown();
+      countUp();          
    }
 }
