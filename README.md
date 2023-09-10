@@ -7,3 +7,5 @@
     - Led: 
         + Version 1: simulates effect of 8 leds by period (blink, run,...).
         + Version 2: uses 74HC595 ICs to control more 8 leds.
+
+    - Button: uses buttons (on, off, toggle) to control led.

@@ -1,0 +1,20 @@
+#include <main.h>
+
+void main() 
+{
+   while (TRUE) 
+   {
+      if (isPressed(btn_on)) { 
+         ON_LED;
+      }
+      
+      if (isPressed(btn_off)) {
+        OFF_LED;
+      }
+      
+      if (isPressed(btn_toggle)) {  
+         while (isPressed(btn_toggle));     // debounce
+         TOGGLE_LED;
+      }
+   }
+}

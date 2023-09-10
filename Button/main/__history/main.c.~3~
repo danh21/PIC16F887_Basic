@@ -1,0 +1,29 @@
+#include <main.h>
+
+void main() {
+   char status = off;  // default
+   
+   while(TRUE) {
+      if (!btn_on) { 
+         status = on;
+         LED(on);
+      }
+      
+      if (!btn_off) {
+         status = off;
+         LED(off);
+      }
+      
+      if (!btn_toggle) {  
+         
+         if (status) {
+            status = off;
+            LED(off);
+         }
+         else {
+            status = on;
+            LED(on);
+         }
+      }
+   }
+}
