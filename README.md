@@ -4,4 +4,4 @@
     - Simulation of projects is executed by Proteus.
 
 # Source
-    - Blink_led: blinking led by period.
+    - Led: simulates effect of Leds by period.

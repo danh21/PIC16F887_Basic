@@ -1,0 +1,14 @@
+ÀÄmain
+   ÀÄMAIN  0/38  Ram=0
+      ÃÄ@cinit1  (Inline)  Ram=0
+      ÃÄblink_leds  0/49  Ram=5
+      ³  ÃÄ@delay_ms1  0/20  Ram=1
+      ³  ÃÄ@delay_ms1  0/20  Ram=1
+      ³  ÃÄ@delay_ms1  0/20  Ram=1
+      ³  ÀÄ@delay_ms1  0/20  Ram=1
+      ÃÄrun_leds_l2r  0/37  Ram=4
+      ³  ÃÄ@delay_ms1  0/20  Ram=1
+      ³  ÀÄ@delay_ms1  0/20  Ram=1
+      ÀÄrun_leds_r2l  0/40  Ram=4
+         ÃÄ@delay_ms1  0/20  Ram=1
+         ÀÄ@delay_ms1  0/20  Ram=1

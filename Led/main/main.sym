@@ -1,0 +1,79 @@
+004-005 @READ_PROGRAM_MEMORY8.P1
+004-005 @WRITE_PROGRAM_MEMORY8.P2
+008     PSP_DATA
+015     CCP_1
+015     CCP_1_LOW
+016     CCP_1_HIGH
+01B     CCP_2_LOW
+01B     CCP_2
+01C     CCP_2_HIGH
+021     @WRITEBITA.P1
+021     blink_leds.value
+021-022 run_leds_l2r.ms
+021-022 run_leds_r2l.ms
+022     @WRITEBITA.P1
+022-023 blink_leds.ms
+023-024 @WRITEBITA.P1
+023     run_leds_l2r.times
+023     run_leds_r2l.times
+024     run_leds_l2r.i
+024     run_leds_r2l.i
+024     blink_leds.times
+025     run_leds_r2l.value
+025     blink_leds.i
+025     run_leds_l2r.value
+026     blink_leds.@SCRATCH1
+026     run_leds_r2l.@SCRATCH1
+026     run_leds_l2r.@SCRATCH1
+027     @delay_ms1.P1
+077     @SCRATCH
+078     @SCRATCH
+078     _RETURN_
+079     @SCRATCH
+07A     @SCRATCH
+09C.6   C1OUT
+09C.7   C2OUT
+10D-10E @READ_PROGRAM_MEMORY8.P1
+10D-10E @WRITE_PROGRAM_MEMORY8.P2
+
+ROM Allocation:
+000004  @delay_ms1
+000018  blink_leds
+000049  run_leds_l2r
+00006E  run_leds_r2l
+000096  @cinit1
+000096  MAIN
+0000A0  @cinit2
+
+Project Directory:
+    D:\cd\PIC_16F887A\Project\PIC16F887_Basic\Blink_led\main\
+
+Project Files:
+    main.c                                                  [10-Sep-23 12:42  CRC=D872A938]
+    main.h                                                  [10-Sep-23 12:41  CRC=2108C03E]
+    ..\..\..\..\..\..\phan_mem\PICC\Devices\16F877A.h       [10-Sep-23 11:04  CRC=81334808]
+
+Source signature=FBE1F986
+
+Units:
+    main (main)
+
+Compiler Settings:
+    Processor:      PIC16F877A
+    Pointer Size:   16
+    ADC Range:      0-65535
+    Opt Level:      9
+    Short,Int,Long: UNSIGNED: 1,8,16
+    Float,Double:   32,32
+
+Output Files:
+    XREF file:   main.xsym
+    Errors:      main.err
+    Ext Symbols: main.esym
+    INHX8:       main.hex
+    Symbols:     main.sym
+    List:        main.lst
+    Debug/COFF:  main.cof
+    Project:     main.ccspjt
+    Call Tree:   main.tre
+    Statistics:  main.STA
