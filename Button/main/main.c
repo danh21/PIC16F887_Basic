@@ -1,18 +1,25 @@
 #include <main.h>
 
-void main() 
-{
-   OFF_LED;
-   
-   while (TRUE) 
+void main()
+{  
+   while(TRUE)
    {
-      if (isPressed(btn_on))
-         ON_LED;
+      //TODO: User Code
+      if (sensor1) {
+         led1(on);
+         buzzer1(on);
+      }
       
-      if (isPressed(btn_off))
-        OFF_LED;
-
-      if (isPressed(btn_toggle))    
-         TOGGLE_LED;
+      if (sensor2) {
+         led2(on);
+         buzzer2(on);
+      }
+      
+      if (rst) {
+         led1(off);
+         buzzer1(off);
+         led2(off);
+         buzzer2(off);
+      }    
    }
 }

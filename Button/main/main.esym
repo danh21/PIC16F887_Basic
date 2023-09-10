@@ -1,7 +1,8 @@
-D G "__PCM__" 0 23 ""5.015""
-D G "__DEVICE__" 0 23 "877"
-D G "__DATE__" 0 23 ""10-Sep-23""
-D G "__TIME__" 0 23 ""18:05:36"" "Standard Header file for the PIC16F877A device ////////////////"
+F G "main" 0 4 "void()" `38 
+D G "__PCM__" 0 4 ""5.015""
+D G "__DEVICE__" 0 4 ""
+D G "__DATE__" 0 4 ""10-Sep-23""
+D G "__TIME__" 0 4 ""18:13:01"" "Standard Header file for the PIC16F877A device ////////////////"
 c L "set_tris_a" 2 3 6 "FUNCTION"
 v L "value" 2 37 "int8" `54 
 f B "set_tris_a" 2 37 "void(int8 value)" `53 
@@ -776,19 +777,17 @@ d G "INT_BUSCOL" 2 665 "0x008D08"
 d G "INT_EEPROM" 2 666 "0x008D10"
 d G "INT_TIMER0" 2 667 "0x000B20"
 d G "INT_COMP" 2 668 "0x008D40"
-D G "led1" 1 12 "PIN_B0"
-D G "btn_on" 1 14 "PIN_C0"
-D G "btn_off" 1 15 "PIN_C1"
-D G "btn_toggle" 1 16 "PIN_C2"
-D G "on" 1 20 "1"
-D G "off" 1 21 "0"
-D G "ON_LED" 1 23 "output_high(led1)"
-D G "OFF_LED" 1 24 "output_low(led1)"
-D G "TOGGLE_LED" 1 25 "output_toggle(led1)"
-V L "btn" 1 27 "int16" `622 
-F G "isPressed" 1 28 "int8(int16 btn)" `621 
-C L "isPressed" 1 30 1 "FUNCTION"
-F G "MAIN" 0 4 "void()" `630 
+D G "on" 1 10 "1"
+D G "off" 1 11 "0"
+D G "sensor1" 1 13 "input(PIN_B1)"
+D G "sensor2" 1 14 "input(PIN_B2)"
+D G "rst" 1 15 "input(PIN_B3)"
+D G "led1" 1 17 "(stt) output_bit(PIN_D0, stt)"
+D G "led2" 1 18 "(stt) output_bit(PIN_D2, stt)"
+D G "buzzer1" 1 20 "(stt) output_bit(PIN_D1, stt)"
+D G "buzzer2" 1 21 "(stt) output_bit(PIN_D3, stt)"
+F G "main" 0 4 "void()" `621 
+C L "main" 0 7 1 "FUNCTION"
 F B "reset_cpu" 0 0
 F B "abs" 1 0
 F B "sleep" 0 0

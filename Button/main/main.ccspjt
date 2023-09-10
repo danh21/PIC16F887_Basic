@@ -16,15 +16,14 @@ BuildRequired=1
 Include=D:\phan_mem\PICC\Devices\;D:\phan_mem\PICC\Drivers\
 Library=
 LinkerScript=
-[D:\cd\PIC 16F877A\Designs\PIC C\buttons_ctrl_led\main]
+[D:\cd\PIC_16F877A\Designs\PIC C\alarm_antiTheft\main]
 Type=4
 [mru-list]
 1=main.c
 [Opened Files]
 1=main.c
 2=main.h
-3=..\..\..\..\..\..\phan_mem\PICC\Devices\16F877A.h
-4=
+3=
 [main.c]
 Type=4
 Path=

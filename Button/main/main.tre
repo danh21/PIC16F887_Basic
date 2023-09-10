@@ -1,12 +1,3 @@
 ÀÄmain
-   ÀÄMAIN  0/50  Ram=0
-      ÃÄ@cinit1  (Inline)  Ram=0
-      ÃÄisPressed  0/37  Ram=2
-      ³  ÃÄ@WRITEBITA  0/32  Ram=6
-      ³  ÃÄ@READBITA  0/23  Ram=5
-      ³  ÃÄ@WRITEBITA  0/32  Ram=6
-      ³  ÀÄ@READBITA  0/23  Ram=5
-      ÃÄisPressed  0/37  Ram=2
-      ³  ÀÄ*
-      ÀÄisPressed  0/37  Ram=2
-         ÀÄ*
+   ÀÄmain  0/60  Ram=0
+      ÀÄ@cinit1  (Inline)  Ram=0
