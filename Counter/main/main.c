@@ -1,10 +1,9 @@
 #include <main.h>
 
 void main()
-{  
-   while (TRUE)
+{   
+   while(TRUE)
    {
-      //TODO: User Code
-      countUp();          
+      countDown();  
    }
 }

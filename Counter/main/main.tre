@@ -1,9 +1,11 @@
 ÀÄmain
-   ÀÄMAIN  0/35  Ram=0
+   ÀÄMAIN  0/37  Ram=0
       ÃÄ@cinit1  (Inline)  Ram=0
-      ÀÄcountUp  0/77  Ram=3
-         ÀÄdisplay_led7seg  (Inline)  Ram=4
+      ÀÄcountDown  0/68  Ram=3
+         ÀÄdisplay_num  (Inline)  Ram=4
             ÃÄ@DIV88  0/21  Ram=3
             ÃÄ@DIV88  0/21  Ram=3
+            ÃÄsend_byte  0/235  Ram=2
             ÃÄ@delay_ms1  0/20  Ram=1
+            ÃÄsend_byte  0/235  Ram=2
             ÀÄ@delay_ms1  0/20  Ram=1

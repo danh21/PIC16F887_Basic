@@ -7,18 +7,9 @@
 
 #use delay(crystal=20000000)
 
+#include <74HC595.h>
 
+#define Led7Seg_OUT(num) output_d(num)
 
-#include "Led7seg_2dig.h"
-
-
-
-void countUp(void)
-{
-   int count, t;
-   for (count = 0; count < 100; count++) {
-      t = 0;
-      while(t++ < 200) 
-         display_led7seg(count);    
-   } 
-}
+#define Led7Seg1(b) output_bit(PIN_B0, b)
+#define Led7Seg2(b) output_bit(PIN_B1, b)

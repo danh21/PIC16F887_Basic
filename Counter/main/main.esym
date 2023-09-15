@@ -1,7 +1,8 @@
-D G "__PCM__" 0 14 ""5.015""
-D G "__DEVICE__" 0 14 "877"
-D G "__DATE__" 0 14 ""10-Sep-23""
-D G "__TIME__" 0 14 ""20:15:04"" "Standard Header file for the PIC16F877A device ////////////////"
+D G "scan_Led7Seg2" 4 7 "{Led7Seg1(1); Led7Seg2(0);}"
+D G "__PCM__" 0 11 ""5.015""
+D G "__DEVICE__" 0 11 "877"
+D G "__DATE__" 0 11 ""15-Sep-23""
+D G "__TIME__" 0 11 ""21:49:12"" "Standard Header file for the PIC16F877A device ////////////////"
 c L "set_tris_a" 2 3 6 "FUNCTION"
 v L "value" 2 37 "int8" `54 
 f B "set_tris_a" 2 37 "void(int8 value)" `53 
@@ -776,21 +777,45 @@ d G "INT_BUSCOL" 2 665 "0x008D08"
 d G "INT_EEPROM" 2 666 "0x008D10"
 d G "INT_TIMER0" 2 667 "0x000B20"
 d G "INT_COMP" 2 668 "0x008D40"
-D G "Led7Seg_OUT" 3 1 "(num) output_d(num)"
-D G "Led7Seg1" 3 3 "(b) output_bit(PIN_B0, b)"
-D G "Led7Seg2" 3 4 "(b) output_bit(PIN_B1, b)"
-D G "scan_Led7Seg1" 3 6 "{Led7Seg2(1); Led7Seg1(0);}"
-D G "scan_Led7Seg2" 3 7 "{Led7Seg1(1); Led7Seg2(0);}"
-V G "number" 3 11 "int8[10]" `621 
-V L "value" 3 15 "int8" `623 
-F G "display_led7seg" 3 16 "void(int8 value)" `622 
-V L "dozens" 3 17 "int8" `624 
-V L "units" 3 17 "int8" `625 
-F G "countUp" 1 17 "void()" `629 
-V L "count" 1 18 "int8" `630 
-V L "t" 1 18 "int8" `631 
-F G "MAIN" 0 4 "void()" `632 
-C L "MAIN" 0 7 1 "FUNCTION"
+D G "SH_CP" 3 2 "PIN_C0"
+D G "DS" 3 3 "PIN_C1"
+D G "ST_CP" 3 4 "PIN_C2"
+D G "MR" 3 5 "PIN_C3"
+D G "Shift_CLK" 3 10 "(x)    output_bit(SH_CP, x)"
+D G "Serial_Data" 3 11 "(x)  output_bit(DS, x)"
+D G "Latch_CLK" 3 12 "(x)    output_bit(ST_CP, x)"
+D G "Shift_CLK_transition" 3 14 "{Shift_CLK(0); Shift_CLK(1);}"
+D G "Latch_CLK_transition" 3 15 "{Latch_CLK(0); Latch_CLK(1);}"
+D G "Reset" 3 16 "{output_bit(MR, 0); output_bit(MR, 1);}"
+V L "bit" 3 20 "int8" `622  "send 1 bit"
+F G "send_bit" 3 21 "void(int8 bit)" `621 
+V L "data" 3 29 "int8" `625  "send 1 byte"
+F G "send_byte" 3 30 "void(int8 data)" `624 
+V L "arrData" 3 60 "*int8" `627 
+V L "len" 3 60 "int8" `628  "send many bytes"
+F G "send_bytes" 3 61 "void(*int8 arrData,int8 len)" `626 
+V L "i" 3 62 "int8" `630 
+D G "Led7Seg_OUT" 4 1 "(num) output_d(num)"
+D G "Led7Seg1" 4 3 "(b) output_bit(PIN_B0, b)"
+D G "Led7Seg2" 4 4 "(b) output_bit(PIN_B1, b)"
+D G "scan_Led7Seg1" 4 6 "{Led7Seg2(1); Led7Seg1(0);}"
+D G "scan_Led7Seg2" 4 7 "{Led7Seg1(1); Led7Seg2(0);}"
+V G "number" 4 11 "int8[10]" `631 
+V L "value" 4 15 "int8" `633 
+F G "display_led7seg" 4 16 "void(int8 value)" `632 
+V L "dozens" 4 17 "int8" `634 
+V L "units" 4 17 "int8" `635 
+V L "value" 1 17 "int8" `640 
+F G "display_num" 1 18 "void(int8 value)" `639 
+V L "dozens" 1 19 "int8" `641 
+V L "units" 1 19 "int8" `642 
+F G "countUp" 1 36 "void()" `643 
+V L "count" 1 37 "int8" `644 
+V L "t" 1 37 "int8" `645 
+F G "countDown" 1 49 "void()" `646 
+V L "count" 1 50 "int8" `647 
+V L "t" 1 50 "int8" `648 
+F G "MAIN" 0 4 "void()" `649 
 F B "reset_cpu" 0 0
 F B "abs" 1 0
 F B "sleep" 0 0

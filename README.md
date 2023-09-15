@@ -14,3 +14,5 @@
 
     - Counter:
         + Version 1: uses 74LS47 IC to decode to display number on 1 led 7-segment, then counts up and counts down.
+        + Version 2: counts up and displays number on 1 led 7-segment 2-digit.
+        + Version 3: uses 74HC595 IC to count down and displays number on 1 led 7-segment 2-digit.

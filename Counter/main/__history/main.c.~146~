@@ -1,0 +1,40 @@
+#include <main.h>
+
+//!char number[10] = {0xC0, 0xF9, 0xA4, 0xB0, 0x99, 0x92, 0x82, 0xF8, 0x80, 0x90};
+//!
+//!void display_led7seg(signed int value) {
+//!   int dozens, units;
+//!   dozens = value / 10;
+//!   units = value % 10;
+//!  
+//!   Led7Seg2(1);  
+//!   Led7Seg1(0);  
+//!   Data_Out(number[dozens]);
+//!   delay_ms(10);
+//!     
+//!   Led7Seg1(1); 
+//!   Led7Seg2(0);
+//!   Data_Out(number[units]); 
+//!   delay_ms(10);  
+//!}
+
+void main()
+{
+//!   signed int count, t;
+int t = 0;
+         while(t++ < 25) 
+   display_num(54);
+   
+   while(TRUE)
+   {
+      //TODO: User Code
+//!      for (count = 99; count >= 0; count--) {
+//!         t = 0;
+//!         while(t++ < 25) 
+//!            display_led7seg(count);    
+//!      }   
+      //countUp();
+      
+      
+   }
+}

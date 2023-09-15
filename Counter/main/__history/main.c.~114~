@@ -1,0 +1,35 @@
+#include <main.h>
+
+unsigned char number[10] = {0xC0, 0xF9, 0xA4, 0xB0, 0x99, 0x92, 0x82, 0xF8, 0x80, 0x90};
+
+void display_led7seg(int value) {
+   int dozens, units;
+   dozens = value / 10;
+   units = value % 10;
+  
+   Led7Seg2(1);  
+   Led7Seg1(0);  
+   Data_Out(number[dozens]);
+   delay_ms(1);
+     
+   Led7Seg1(1); 
+   Led7Seg2(0);
+   Data_Out(number[units]);    
+   delay_ms(1);  
+}
+
+void main()
+{
+   int char = 21, t;
+   
+   while(TRUE)
+   {
+      //TODO: User Code
+      /*for (count = 0; count < 100; count++) {
+         t = 0;
+         while(t++ < 200) 
+            display_led7seg(count);    
+      }    */
+      display_led7seg(count); 
+   }
+}
