@@ -1,0 +1,13 @@
+#include <main.h>
+void main()
+{
+   lcd_init();
+   //lcd_clear();
+   char CHUOI[10]="CHELSEA";
+   while(TRUE)
+   {
+      lcd_gotoxy(1,1);
+      lcd_puts(CHUOI);
+   }
+
+}

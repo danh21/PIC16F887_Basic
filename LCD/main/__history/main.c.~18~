@@ -1,0 +1,12 @@
+#include <main.h>
+void main()
+{
+   lcd_init();
+   //lcd_clear();
+   while(TRUE)
+   {
+      lcd_gotoxy(2,1);
+      lcd_putc('21');
+   }
+
+}

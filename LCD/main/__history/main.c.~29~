@@ -1,0 +1,27 @@
+#include <main.h>
+void lcd_clear(void)
+{
+   lcd_send_byte(0,0x01);
+   delay_ms(2);
+}
+
+void lcd_puts(char *str)
+{
+   while(*str!=NULL)
+   {
+      lcd_putc(*str);
+      str++;
+   }
+}
+void main()
+{
+   lcd_init();
+   //lcd_clear();
+   char CHUOI[17]="CHELSEA";
+   while(TRUE)
+   {
+      lcd_gotoxy(1,1);
+      lcd_puts(CHUOI);
+   }
+
+}
