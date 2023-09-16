@@ -20,19 +20,26 @@
 
 void main()
 {
-//!   signed int count, t;
-  // display_num(54);
+//!   signed int count = 0;
    
    while(TRUE)
    {
-      //TODO: User Code
-//!      for (count = 99; count >= 0; count--) {
-//!         t = 0;
-//!         while(t++ < 25) 
-//!            display_led7seg(count);    
-//!      }   
-      countUp();
-      
-      
+//!      if (upBtn) {
+//!         count++;
+//!         if (count == 100)
+//!            count = 0;
+//!         while (upBtn)
+//!            display_led7seg(count);
+//!      }
+//!      
+//!      if (downBtn) {
+//!         count--;
+//!         if (count == -1)
+//!            count = 99;
+//!         while (downBtn)
+//!            display_led7seg(count);
+//!      }
+//!      
+//!      display_led7seg(count);
    }
 }

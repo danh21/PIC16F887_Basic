@@ -9,19 +9,18 @@
 01C     CCP_2_HIGH
 020     @TRIS_C
 021-02A number
-02B     countDown.count
-02C     countDown.t
-02D     display_num.value
-02D     countDown.@SCRATCH1
-02E     display_num.dozens
-02F     display_num.units
-030     @delay_ms1.P1
-030     @DIV88.P2
-030     display_num.@SCRATCH1
-031     @DIV88.P1
-031     send_byte.data
-032     send_byte.@SCRATCH1
-032     @DIV88.@SCRATCH1
+02B     count
+02C     display_num.value
+02D     display_num.dozens
+02E     display_num.units
+02F     @delay_ms1.P1
+02F     @DIVS88.P2
+02F     display_num.@SCRATCH1
+030     @DIVS88.P1
+030     send_byte.data
+031     send_byte.@SCRATCH1
+031     @DIVS88.@SCRATCH1
+032     @DIVS88.@SCRATCH2
 077     @SCRATCH
 078     @SCRATCH
 078     _RETURN_
@@ -33,26 +32,26 @@
 10D-10E @READ_PROGRAM_MEMORY8.P2
 
 ROM Allocation:
-000004  @DIV88
-000019  send_byte
-000104  @delay_ms1
-000118  countDown
-000122  display_num
-00015C  @cinit1
-00015C  MAIN
-000168  @cinit2
+000004  @DIVS88
+000029  send_byte
+000114  @delay_ms1
+000128  counter
+00014A  display_num
+000181  @cinit1
+000181  MAIN
+00018E  @cinit2
 
 Project Directory:
-    D:\cd\PIC_16F887A\Project\PIC C\count_2numbers_74HC595\main\
+    D:\cd\PIC_16F887A\Project\PIC C\countUpDown_2numbers_byBtns\main\
 
 Project Files:
-    main.c                                                  [15-Sep-23 21:49  CRC=00000000]
-    main.h                                                  [15-Sep-23 21:49  CRC=3352A2A9]
+    main.c                                                  [16-Sep-23 10:28  CRC=00000000]
+    main.h                                                  [16-Sep-23 10:28  CRC=63997006]
     ..\..\..\..\..\..\phan_mem\PICC\Devices\16F877A.h       [10-Sep-23 11:04  CRC=81334808]
     74HC595.h                                               [10-Sep-23 17:09  CRC=C425309C]
     Led7seg_2dig.h                                          [10-Sep-23 20:14  CRC=9B7CC446]
 
-Source signature=AFA4A3D9
+Source signature=DFEB7136
 
 Units:
     main (main)

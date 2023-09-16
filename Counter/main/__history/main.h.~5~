@@ -7,12 +7,10 @@
 
 #use delay(crystal=20000000)
 
-
-
-#include "74HC595.h"
-#include "Led7seg_2dig"
-
-
+#include <74HC595.h>
 
 #define Led7Seg1(b) output_bit(PIN_B0, b)
 #define Led7Seg2(b) output_bit(PIN_B1, b)
+
+#define upBtn input(PIN_B2)
+#define downBtn input(PIN_B3)

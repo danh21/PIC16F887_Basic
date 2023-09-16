@@ -1,8 +1,8 @@
-D G "scan_Led7Seg2" 4 7 "{Led7Seg1(1); Led7Seg2(0);}"
-D G "__PCM__" 0 11 ""5.015""
-D G "__DEVICE__" 0 11 "877"
-D G "__DATE__" 0 11 ""15-Sep-23""
-D G "__TIME__" 0 11 ""21:49:12"" "Standard Header file for the PIC16F877A device ////////////////"
+D G "downBtn" 1 17 "input(PIN_B3)"
+D G "__PCM__" 0 13 ""5.015""
+D G "__DEVICE__" 0 13 "877"
+D G "__DATE__" 0 13 ""16-Sep-23""
+D G "__TIME__" 0 13 ""10:28:19"" "Standard Header file for the PIC16F877A device ////////////////"
 c L "set_tris_a" 2 3 6 "FUNCTION"
 v L "value" 2 37 "int8" `54 
 f B "set_tris_a" 2 37 "void(int8 value)" `53 
@@ -805,17 +805,15 @@ V L "value" 4 15 "int8" `633
 F G "display_led7seg" 4 16 "void(int8 value)" `632 
 V L "dozens" 4 17 "int8" `634 
 V L "units" 4 17 "int8" `635 
-V L "value" 1 17 "int8" `640 
-F G "display_num" 1 18 "void(int8 value)" `639 
-V L "dozens" 1 19 "int8" `641 
-V L "units" 1 19 "int8" `642 
-F G "countUp" 1 36 "void()" `643 
-V L "count" 1 37 "int8" `644 
-V L "t" 1 37 "int8" `645 
-F G "countDown" 1 49 "void()" `646 
-V L "count" 1 50 "int8" `647 
-V L "t" 1 50 "int8" `648 
-F G "MAIN" 0 4 "void()" `649 
+D G "upBtn" 1 16 "input(PIN_B2)"
+D G "downBtn" 1 17 "input(PIN_B3)"
+V G "count" 1 19 "sint8" `639 
+V L "value" 1 23 "sint8" `641 
+F G "display_num" 1 24 "void(sint8 value)" `640 
+V L "dozens" 1 25 "int8" `642 
+V L "units" 1 25 "int8" `643 
+F G "counter" 1 42 "void()" `647 
+F G "MAIN" 0 4 "void()" `648 
 F B "reset_cpu" 0 0
 F B "abs" 1 0
 F B "sleep" 0 0
