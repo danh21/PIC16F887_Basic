@@ -1,0 +1,11 @@
+#include <main.h>
+
+void main() {  
+   while(TRUE) {
+      //TODO: User Code
+      output_high(pulseCtrlServo);
+      delay_us(417);
+      output_low(pulseCtrlServo);
+      delay_us(20000-417);
+   }
+}

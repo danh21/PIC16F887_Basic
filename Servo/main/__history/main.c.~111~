@@ -1,0 +1,20 @@
+#include <main.h>
+
+void main() {  
+   while(TRUE) {
+      rotateServo(0);
+      delay_ms(500);
+      rotateServo(30);
+      delay_ms(500);
+      rotateServo(60);
+      delay_ms(500);
+      rotateServo(90);
+      delay_ms(500);
+       rotateServo(120);
+      delay_ms(500);
+      rotateServo(150);
+      delay_ms(500);
+      rotateServo(180);
+      delay_ms(500);
+   }
+}

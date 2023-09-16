@@ -1,0 +1,25 @@
+#include <main.h>
+
+void rotateServo(int ) {
+   output_high(ctrlPulse);
+   delay_us(2500);
+   output_low(ctrlPulse);
+   delay_us(20000 - 2500);
+}
+
+void delay4us(int t) { 
+   while(t>0) 
+      t--;     
+}
+
+void main() {  
+unsigned int16 t = 2500;
+   while(TRUE) {
+      //rotateServo(2500);
+      
+      output_high(ctrlPulse);
+      delay_us(t);
+      output_low(ctrlPulse);
+      delay_us(20000 - t);
+   }
+}

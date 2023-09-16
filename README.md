@@ -17,3 +17,5 @@
         + Version 2: counts up and displays number on 1 led 7-segment 2-digit.
         + Version 3: counts down (using 74HC595 IC for output data) and displays number on 1 led 7-segment 2-digit.
         + Version 4: uses buttons to count up/down (using 74HC595 IC for output data) and displays number on 1 led 7-segment 2-digit.
+
+    - Servo: rotates motor servo by controlling pulse.

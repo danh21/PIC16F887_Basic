@@ -1,0 +1,12 @@
+#include <main.h>
+
+void main() {  
+int Ton = 1000;
+   while(TRUE) {
+      //TODO: User Code
+      output_high(pulseCtrlServo);
+      delay_us(1000);
+      output_low(pulseCtrlServo);
+      delay_us(T - 1000);
+   }
+}

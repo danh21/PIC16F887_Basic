@@ -1,0 +1,19 @@
+#include <16F877A.h>
+#device ADC=16
+
+#FUSES NOWDT                    //No Watch Dog Timer
+#FUSES NOBROWNOUT               //No brownout reset
+#FUSES NOLVP                    //No low voltage prgming, B3(PIC16) or B5(PIC18) used for I/O
+
+#use delay(crystal=20000000)
+
+#define ctrlPulse PIN_B0
+
+int T = 20000;
+int minAngle = 0;
+int maxAngle = 180;
+int minCtrlPulse = 500;
+int maxCtrlPulse = 2500;
+int angle = 45;
+
+int Ton = (angle - minAngle) * (maxCtrlPulse - minCtrlPulse) / (maxAngle - minAngle) + minCtrlPulse;
