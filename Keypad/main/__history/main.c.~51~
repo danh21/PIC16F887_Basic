@@ -1,0 +1,14 @@
+#include <main.h>
+
+void main()
+{  
+   char key;
+   //col1(1); col2(1); col3(1); col4(1); 
+   while(TRUE)
+   {  
+      key = scan_keypad();
+      if (key != -1) 
+         printf("Key: %c\r\n", key);
+      
+   }
+}

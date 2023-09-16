@@ -1,0 +1,14 @@
+#include <main.h>
+
+void main()
+{  
+   char key;
+
+   while(TRUE)
+   {  
+      key = scan_keypad();
+      if (key != -1) 
+         printf("Key: %c\r\n", key);
+      delay_ms(200);
+   }
+}

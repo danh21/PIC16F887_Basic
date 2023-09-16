@@ -1,0 +1,145 @@
+//!#define rowA(x) output_bit(PIN_B7, x)
+//!#define rowB(x) output_bit(PIN_B6, x)
+//!#define rowC(x) output_bit(PIN_B5, x)
+//!#define rowD(x) output_bit(PIN_B4, x)
+//!
+//!#define col1(x) output_bit(PIN_B3, x)
+//!#define col2(x) output_bit(PIN_B2, x)
+//!#define col3(x) output_bit(PIN_B1, x)
+//!#define col4(x) output_bit(PIN_B0, x)
+
+#define row1 PIN_B7
+#define row2 PIN_B6
+#define row3 PIN_B5
+#define row4 PIN_B4
+
+#define col1 PIN_B3
+#define col2 PIN_B2
+#define col3 PIN_B1
+#define col4 PIN_B0
+
+
+
+#define keypad_numOfRows 4                     
+#define keypad_numOfCols 4    
+
+//const char keys[16] = {'7','4','1','C','8','5','2','0','9','6','3','=','/','*','-','+'};
+
+const char keys[keypad_numOfRows][keypad_numOfCols] = {   
+   '7', '8', '9', 0xFD,
+   '4', '5', '6', 'x',
+   '1', '2', '3', '-',
+   ' ', '0', '=', '+'
+};
+
+
+
+//!signed char scan_keypad() 
+//!{
+//!   signed char key_in = -1;
+//!   
+//!   col1(0);
+//!   if(rowA == 0)
+//!      key_in = 0;
+//!   else if(rowB == 0)
+//!      key_in = 1;
+//!   else if(rowC == 0)
+//!      key_in = 2;
+//!   else if(rowD == 0)  
+//!      key_in = 3; 
+//!   col1(1);
+//!   
+//!   col2(0);
+//!   if(rowA == 0)
+//!      key_in = 4;
+//!   else if(rowB == 0)
+//!      key_in = 5;
+//!   else if(rowC == 0)
+//!      key_in = 6;
+//!   else if(rowD == 0)  
+//!      key_in = 7; 
+//!   col2(1);
+//!   
+//!   col3(0);
+//!   if(rowA == 0)
+//!      key_in = 8;
+//!   else if(rowB == 0)
+//!      key_in = 9;
+//!   else if(rowC == 0)
+//!      key_in = 10;
+//!   else if(rowD == 0)  
+//!      key_in = 11; 
+//!   col3(1);
+//!   
+//!   col4(0);
+//!   if(rowA == 0)
+//!      key_in = 12;
+//!   else if(rowB == 0)
+//!      key_in = 13;
+//!   else if(rowC == 0)
+//!      key_in = 14;
+//!   else if(rowD == 0)  
+//!      key_in = 15; 
+//!   col4(1);
+//!   
+//!   if (key_in != -1)
+//!      return keys[key_in];
+//!   return -1;
+//!}
+
+
+char scan_col(void) 
+{
+   char col = -1;
+   
+   output_low(row1); output_low(row2); output_low(row3); output_low(row4);
+   output_high(col1); output_high(col2); output_high(col3); output_high(col4);
+    
+    if (input_state(col1) == 0)                       
+       col = 0;
+    else if (input_state(col2) == 0)
+       col = 1;
+    else if (input_state(col3) == 0)
+       col = 2;
+   else if (input_state(col4) == 0)
+       col = 3;
+      
+   return col;   
+}
+
+
+
+char scan_row(void)                
+{
+   char row;
+
+   output_high(row1); output_high(row2); output_high(row3); output_high(row4);
+   output_low(col1); output_low(col2); output_low(col3); output_low(col4);
+
+   if (input_state(row1) == 0)
+      row = 0;
+   else if (input_state(row2) == 0)
+      row = 1;
+   else if (input_state(row3) == 0)
+      row = 2;
+   else if(input_state(row4) == 0)
+      row = 3;
+
+   return row;
+}
+
+
+
+char scan_keypad(void)
+{
+   char col, row, key = -1;
+   
+   col = scan_col();
+   
+   if (col != -1) {
+      row = scan_row();
+      key = keys[row][col];
+   }
+   
+   return key;
+}

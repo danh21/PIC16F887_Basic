@@ -1,0 +1,26 @@
+#include <main.h>
+
+void main()
+{  
+   char key, col, row;
+
+   while (TRUE)
+   {  
+//!      col = scan_col();
+//!      
+//!      if (col != -1) {
+//!         row = scan_row();
+//!         print_key(keys[row][col]);
+//!      }
+//!      
+//!      
+//!      delay_ms(200);
+//!
+      output_high(PIN_C0);
+      //output_drive(PIN_C0);
+      
+      delay_ms(1000);
+      
+      output_bit(PIN_C1, input(PIN_C0));
+   }
+}

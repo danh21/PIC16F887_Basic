@@ -1,0 +1,8 @@
+ÀÄmain
+   ÀÄMAIN  0/31  Ram=1
+      ÃÄ@cinit1  (Inline)  Ram=0
+      ÃÄscan_keypad  0/192  Ram=3
+      ³  ÀÄ@const621  0/20  Ram=0
+      ÃÄprint_key  0/116  Ram=1
+      ³  ÀÄ@PSTRINGCN7_9600_62_63  (Inline)  Ram=5
+      ÀÄ@delay_ms1  0/22  Ram=1

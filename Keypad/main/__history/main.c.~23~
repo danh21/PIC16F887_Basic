@@ -1,0 +1,21 @@
+#include <main.h>
+
+void main()
+{  
+   char res;
+   
+   while(TRUE)
+   {
+      col1_out(1); col2_out(1); col3_out(1); col4_out(1); 
+      rowA_out(0); rowB_out(0); rowC_out(0); rowD_out(0);
+      if(!col1_in)
+        res = scan_col1();
+      else if(!col2_in)
+        res = scan_col2();
+      else if(!col3_in)
+        res = scan_col3();
+      else if(!col4_in)
+        res = scan_col4();
+      
+   }
+}

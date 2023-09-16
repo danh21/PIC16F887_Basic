@@ -1,0 +1,35 @@
+#include <main.h>
+
+void main()
+{  
+   char res;
+   col1(1); col2(1); col3(1); col4(1); 
+   while(TRUE)
+   {  
+      res = scan_keypad();
+      printf("Result: %c\r\n", res);
+      delay_ms(1000);
+      //col1(0); col2(1); col3(1); col4(1); 
+      //rowA_out(0); rowB_out(0); rowC_out(0); rowD_out(0);
+      
+      /*if(col1_in == 0) {
+         res = scan_col1();
+         printf("Result: %c", res);
+      }*/
+        
+      /*else if(!col2_in) {
+        res = scan_col2();
+        printf("Result: %c", res);
+      }
+      
+      else if(!col3_in) {
+        res = scan_col3();
+        printf("Result: %c", res);
+      }
+      
+      else if(!col4_in) {
+        res = scan_col4();
+        printf("Result: %c", res);
+      }*/
+   }
+}

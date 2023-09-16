@@ -19,3 +19,5 @@
         + Version 4: uses buttons to count up/down (using 74HC595 IC for output data) and displays number on 1 led 7-segment 2-digit.
 
     - Servo: rotates motor servo by controlling pulse.
+
+    - Keypad: uses keypad to enter characters, then displays letters on virtual terminal by UART.
