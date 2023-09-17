@@ -1,0 +1,25 @@
+#include <main.h>
+
+void main() 
+{
+   int16 adc; 
+   char string[17];
+   
+   lcd_init();
+   lcd_clear();
+  
+   setup_adc(ADC_CLOCK_INTERNAL);
+   setup_adc_ports(AN0);            // important
+   set_adc_channel(2);              // AN2
+   
+   while (TRUE) {
+      adc = read_adc();
+      delay_us(10);
+      sprintf(string, "ADC = %04ld", adc);  // 4 numbers
+      
+      lcd_gotoxy(4,1);                        
+      lcd_puts(string);
+      
+      delay_ms(100);
+   }
+}

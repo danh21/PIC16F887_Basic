@@ -1,0 +1,23 @@
+#include <main.h>
+
+void main()
+{
+   int16 adc; 
+   char chuoi[17];
+   lcd_init();
+   lcd_clear();
+  
+   setup_adc(ADC_CLOCK_INTERNAL);
+   setup_adc_ports(AN0);
+   set_adc_channel(0);
+   
+   while(TRUE)
+   {
+      adc = read_adc();
+      lcd_gotoxy(1,1);                 //hang 1 cot 1
+      sprintf(chuoi,"ADC=%04ld",adc);  //hien thi 4 so
+      lcd_puts(chuoi);
+      delay_ms(100);
+   }
+   
+}

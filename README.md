@@ -25,3 +25,5 @@
     - Keypad: uses keypad to enter characters, then displays letters on virtual terminal by UART.
 
     - LCD: displays information on 16x2 LCD.
+
+    - ADC: reads ADC and displays value on LCD.
