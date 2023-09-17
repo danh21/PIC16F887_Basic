@@ -1,11 +1,13 @@
 ÀÄmain
-   ÀÄMAIN  0/57  Ram=1
+   ÀÄMAIN  0/48  Ram=0
       ÃÄ@cinit1  (Inline)  Ram=0
-      ÃÄrotateServo  0/170  Ram=8
-      ³  ÃÄ@DIV1616  (Inline)  Ram=5
-      ³  ÃÄ@MUL1616  (Inline)  Ram=5
-      ³  ÃÄ@delay_us1  0/15  Ram=1
-      ³  ÃÄ@delay_us1  0/15  Ram=1
-      ³  ÃÄ@delay_us1  0/15  Ram=1
-      ³  ÀÄ@delay_us1  0/15  Ram=1
-      ÀÄ@delay_ms1  0/22  Ram=1
+      ÃÄisPressed  0/39  Ram=2
+      ³  ÃÄ@WRITEBITA  0/32  Ram=6
+      ³  ÃÄ@READBITA  0/23  Ram=5
+      ³  ÃÄ@WRITEBITA  0/32  Ram=6
+      ³  ÀÄ@READBITA  0/23  Ram=5
+      ÃÄrotateToMin  0/30  Ram=2
+      ³  ÀÄrotateToSec  0/49  Ram=3
+      ³     ÀÄ@delay_ms1  (Inline)  Ram=1
+      ÀÄrotateToSec  0/49  Ram=3
+         ÀÄ*

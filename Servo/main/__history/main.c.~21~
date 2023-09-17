@@ -2,7 +2,7 @@
 
 void main() 
 {
-   while (TRUE) 
+   while(TRUE) 
    {
       //TODO: User Code
       if (isPressed(rotateBtn)) {

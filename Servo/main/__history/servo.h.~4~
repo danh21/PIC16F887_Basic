@@ -32,12 +32,12 @@ void rotateServo(uint16 angle)
 
 void rotateToSec(int16 s) 
 {
-   Servo(on);
+   Servo(1);
    while (s > 0) {
       delay_ms(1000); // 1 second
       s--;
    }
-   Servo(off);
+   Servo(0);
 }
 
 

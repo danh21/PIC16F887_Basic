@@ -1,7 +1,7 @@
-D G "__PCM__" 0 13 ""5.015""
-D G "__DEVICE__" 0 13 "877"
-D G "__DATE__" 0 13 ""16-Sep-23""
-D G "__TIME__" 0 13 ""12:05:04"" "Standard Header file for the PIC16F877A device ////////////////"
+D G "__PCM__" 0 15 ""5.015""
+D G "__DEVICE__" 0 15 "877"
+D G "__DATE__" 0 15 ""17-Sep-23""
+D G "__TIME__" 0 15 ""11:45:11"" "Standard Header file for the PIC16F877A device ////////////////"
 c L "set_tris_a" 2 3 6 "FUNCTION"
 v L "value" 2 37 "int8" `54 
 f B "set_tris_a" 2 37 "void(int8 value)" `53 
@@ -776,19 +776,35 @@ d G "INT_BUSCOL" 2 665 "0x008D08"
 d G "INT_EEPROM" 2 666 "0x008D10"
 d G "INT_TIMER0" 2 667 "0x000B20"
 d G "INT_COMP" 2 668 "0x008D40"
-D G "PulseServo" 3 1 "PIN_B0"
-T G "uint16" 3 3 "int16" `621 
-V G "T" 3 5 "uint16" `622 
-V G "minAngle" 3 6 "uint16" `623 
-V G "maxAngle" 3 7 "uint16" `624 
-V G "minPulseServo" 3 8 "uint16" `625 
-V G "maxPulseServo" 3 9 "uint16" `626 
-V L "angle" 3 13 "uint16" `628 
-F G "rotateServo" 3 14 "void(uint16 angle)" `627 
-V L "temp" 3 15 "uint16" `629 
-V L "Ton" 3 17 "uint16" `636 
-F G "MAIN" 0 4 "void()" `637 
-V L "angle" 0 7 "uint16" `640 
+D G "PulseServo" 3 1 "PIN_C1"
+D G "on" 3 5 "1"
+D G "off" 3 6 "0"
+D G "Servo" 3 7 "(x) output_bit(PulseServo, x)"
+T G "uint16" 3 9 "int16" `621 
+V G "T" 3 10 "uint16" `622 
+V G "minAngle" 3 11 "uint16" `623 
+V G "maxAngle" 3 12 "uint16" `624 
+V G "minPulseServo" 3 13 "uint16" `625 
+V G "maxPulseServo" 3 14 "uint16" `626 
+V L "angle" 3 18 "uint16" `628 
+F G "rotateServo" 3 19 "void(uint16 angle)" `627 
+V L "temp" 3 20 "uint16" `629 
+V L "Ton" 3 22 "uint16" `636 
+V L "s" 3 32 "int16" `639 
+F G "rotateToSec" 3 33 "void(int16 s)" `638 
+C L "rotateToSec" 3 36 1 "FUNCTION"
+V L "m" 3 44 "int16" `641 
+F G "rotateToMin" 3 45 "void(int16 m)" `640 
+C L "rotateToMin" 3 36 1 "FUNCTION"
+V L "h" 3 56 "int16" `643 
+F G "rotateToHour" 3 57 "void(int16 h)" `642 
+C L "rotateToHour" 3 36 1 "FUNCTION"
+D G "rotateBtn" 4 1 "PIN_D7"
+V L "btn" 4 5 "int16" `645 
+F G "isPressed" 4 6 "int8(int16 btn)" `644 
+C L "isPressed" 4 8 1 "FUNCTION"
+F G "MAIN" 0 4 "void()" `653 
+C L "MAIN" 0 7 1 "FUNCTION"
 F B "reset_cpu" 0 0
 F B "abs" 1 0
 F B "sleep" 0 0

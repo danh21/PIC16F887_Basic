@@ -7,8 +7,9 @@
 
 #use delay(crystal=20000000)
 
-#define pulseCtrlServo PIN_B0
 
-int angle = 180;
-int T_on = angle * 2500 / 180 + 500;
-int T_on = 2500;
+
+#include "servo.h"
+
+//!#define Motor(x)     output_bit(PIN_C1, x)
+#define Btn_rotate input(PIN_D7)

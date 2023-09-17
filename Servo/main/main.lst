@@ -1,18 +1,18 @@
-CCS PCM C Compiler, Version 5.015, 5967               16-Sep-23 12:05
+CCS PCM C Compiler, Version 5.015, 5967               17-Sep-23 11:45
 
-               Filename:   D:\cd\PIC_16F887A\Project\PIC C\ctrl_servo\main\main.lst
+               Filename:   D:\cd\PIC_16F887A\Project\PIC C\motor_rotate_toTime_byBtn\main.lst
 
-               ROM used:   268 words (3%)
+               ROM used:   225 words (3%)
                            Largest free fragment is 2048
                RAM used:   16 (4%) at main() level
-                           32 (9%) worst case
+                           22 (6%) worst case
                Stack used: 2 locations
                Stack size: 8
 
 *
 0000:  MOVLW  00
 0001:  MOVWF  0A
-0002:  GOTO   0D3
+0002:  GOTO   0B1
 0003:  NOP
 .................... #include <main.h> 
 .................... #include <16F877A.h> 
@@ -27,64 +27,61 @@ CCS PCM C Compiler, Version 5.015, 5967               16-Sep-23 12:05
 .................... //// form are not restricted in any way.                               //// 
 .................... /////////////////////////////////////////////////////////////////////////// 
 .................... #device PIC16F877A 
-*
-0031:  CLRF   78
-0032:  CLRF   79
-0033:  CLRF   77
-0034:  CLRF   7A
-0035:  MOVF   39,W
-0036:  BTFSS  03.2
-0037:  GOTO   03B
-0038:  MOVF   38,W
-0039:  BTFSC  03.2
-003A:  GOTO   055
-003B:  MOVLW  10
-003C:  MOVWF  3A
-003D:  BCF    03.0
-003E:  RLF    36,F
-003F:  RLF    37,F
-0040:  RLF    77,F
-0041:  RLF    7A,F
-0042:  MOVF   39,W
-0043:  SUBWF  7A,W
-0044:  BTFSS  03.2
-0045:  GOTO   048
-0046:  MOVF   38,W
-0047:  SUBWF  77,W
-0048:  BTFSS  03.0
-0049:  GOTO   051
-004A:  MOVF   38,W
-004B:  SUBWF  77,F
-004C:  BTFSS  03.0
-004D:  DECF   7A,F
-004E:  MOVF   39,W
-004F:  SUBWF  7A,F
-0050:  BSF    03.0
-0051:  RLF    78,F
-0052:  RLF    79,F
-0053:  DECFSZ 3A,F
-0054:  GOTO   03D
-*
-006E:  MOVLW  10
-006F:  MOVWF  38
-0070:  CLRF   77
-0071:  CLRF   7A
-0072:  RRF    35,F
-0073:  RRF    34,F
-0074:  BTFSS  03.0
-0075:  GOTO   07C
-0076:  MOVF   36,W
-0077:  ADDWF  77,F
-0078:  BTFSC  03.0
-0079:  INCF   7A,F
-007A:  MOVF   37,W
-007B:  ADDWF  7A,F
-007C:  RRF    7A,F
-007D:  RRF    77,F
-007E:  RRF    79,F
-007F:  RRF    78,F
-0080:  DECFSZ 38,F
-0081:  GOTO   072
+0004:  MOVF   2D,W
+0005:  ANDLW  07
+0006:  MOVWF  77
+0007:  RRF    2D,W
+0008:  MOVWF  78
+0009:  RRF    78,F
+000A:  RRF    78,F
+000B:  MOVLW  1F
+000C:  ANDWF  78,F
+000D:  MOVF   78,W
+000E:  ADDWF  2F,W
+000F:  MOVWF  04
+0010:  BCF    03.7
+0011:  BTFSC  30.0
+0012:  BSF    03.7
+0013:  CLRF   78
+0014:  INCF   78,F
+0015:  INCF   77,F
+0016:  GOTO   018
+0017:  RLF    78,F
+0018:  DECFSZ 77,F
+0019:  GOTO   017
+001A:  MOVF   2E,F
+001B:  BTFSC  03.2
+001C:  GOTO   020
+001D:  MOVF   78,W
+001E:  IORWF  00,F
+001F:  GOTO   023
+0020:  COMF   78,F
+0021:  MOVF   78,W
+0022:  ANDWF  00,F
+0023:  RETURN
+0024:  MOVF   2D,W
+0025:  ANDLW  07
+0026:  MOVWF  77
+0027:  RRF    2D,W
+0028:  MOVWF  78
+0029:  RRF    78,F
+002A:  RRF    78,F
+002B:  MOVLW  1F
+002C:  ANDWF  78,F
+002D:  MOVF   78,W
+002E:  ADDWF  2E,W
+002F:  MOVWF  04
+0030:  BCF    03.7
+0031:  BTFSC  2F.0
+0032:  BSF    03.7
+0033:  MOVF   00,W
+0034:  MOVWF  78
+0035:  INCF   77,F
+0036:  GOTO   038
+0037:  RRF    78,F
+0038:  DECFSZ 77,F
+0039:  GOTO   037
+003A:  RETURN
 ....................  
 .................... #list 
 ....................  
@@ -96,52 +93,38 @@ CCS PCM C Compiler, Version 5.015, 5967               16-Sep-23 12:05
 ....................  
 .................... #use delay(crystal=20000000) 
 *
-0004:  MOVLW  03
-0005:  SUBWF  35,F
-0006:  BTFSS  03.0
-0007:  GOTO   012
-0008:  MOVLW  35
-0009:  MOVWF  04
-000A:  BCF    03.7
-000B:  MOVF   00,W
-000C:  BTFSC  03.2
-000D:  GOTO   012
-000E:  GOTO   010
-000F:  GOTO   010
-0010:  DECFSZ 00,F
-0011:  GOTO   00F
-0012:  RETURN
-*
-00BD:  MOVLW  2D
-00BE:  MOVWF  04
-00BF:  BCF    03.7
-00C0:  MOVF   00,W
-00C1:  BTFSC  03.2
-00C2:  GOTO   0D0
-00C3:  MOVLW  06
-00C4:  MOVWF  78
-00C5:  CLRF   77
-00C6:  DECFSZ 77,F
-00C7:  GOTO   0C6
-00C8:  DECFSZ 78,F
-00C9:  GOTO   0C5
-00CA:  MOVLW  7B
-00CB:  MOVWF  77
-00CC:  DECFSZ 77,F
-00CD:  GOTO   0CC
-00CE:  DECFSZ 00,F
-00CF:  GOTO   0C3
-00D0:  BCF    0A.3
-00D1:  BCF    0A.4
-00D2:  GOTO   103 (RETURN)
+0072:  MOVLW  30
+0073:  MOVWF  04
+0074:  BCF    03.7
+0075:  MOVF   00,W
+0076:  BTFSC  03.2
+0077:  GOTO   085
+0078:  MOVLW  06
+0079:  MOVWF  78
+007A:  CLRF   77
+007B:  DECFSZ 77,F
+007C:  GOTO   07B
+007D:  DECFSZ 78,F
+007E:  GOTO   07A
+007F:  MOVLW  7B
+0080:  MOVWF  77
+0081:  DECFSZ 77,F
+0082:  GOTO   081
+0083:  DECFSZ 00,F
+0084:  GOTO   078
 ....................  
 ....................  
 ....................  
 .................... #include "servo.h" 
-.................... #define PulseServo PIN_B0 
+.................... #define PulseServo PIN_C1 
+....................  
+....................  
+....................  
+.................... #define on 1 
+.................... #define off 0 
+.................... #define Servo(x) output_bit(PulseServo, x) 
 ....................  
 .................... typedef unsigned int16 uint16; 
-....................  
 .................... uint16 T = 20000; 
 .................... uint16 minAngle = 0; 
 .................... uint16 maxAngle = 180; 
@@ -151,206 +134,234 @@ CCS PCM C Compiler, Version 5.015, 5967               16-Sep-23 12:05
 ....................  
 ....................  
 .................... void rotateServo(uint16 angle)  
-*
-0013:  MOVF   26,W
-0014:  SUBWF  28,W
-0015:  MOVWF  32
-0016:  MOVF   29,W
-0017:  MOVWF  33
-0018:  MOVF   27,W
-0019:  BTFSS  03.0
-001A:  INCFSZ 27,W
-001B:  SUBWF  33,F
-001C:  MOVF   22,W
-001D:  SUBWF  24,W
-001E:  MOVWF  77
-001F:  MOVF   25,W
-0020:  MOVWF  7A
-0021:  MOVF   23,W
-0022:  BTFSS  03.0
-0023:  INCFSZ 23,W
-0024:  SUBWF  7A,F
-0025:  MOVF   77,W
-0026:  MOVWF  34
-0027:  MOVF   7A,W
-0028:  MOVWF  35
-0029:  MOVF   33,W
-002A:  MOVWF  37
-002B:  MOVF   32,W
-002C:  MOVWF  36
-002D:  MOVF   35,W
-002E:  MOVWF  39
-002F:  MOVF   34,W
-0030:  MOVWF  38
-*
-0055:  MOVF   79,W
-0056:  MOVWF  2F
-0057:  MOVF   78,W
-0058:  MOVWF  2E
 .................... { 
 ....................    uint16 temp = (maxPulseServo - minPulseServo) / (maxAngle - minAngle); 
 ....................    temp *= (angle - minAngle);    
-0059:  MOVF   22,W
-005A:  SUBWF  2C,W
-005B:  MOVWF  77
-005C:  MOVF   2D,W
-005D:  MOVWF  7A
-005E:  MOVF   23,W
-005F:  BTFSS  03.0
-0060:  INCFSZ 23,W
-0061:  SUBWF  7A,F
-0062:  MOVF   77,W
-0063:  MOVWF  32
-0064:  MOVF   7A,W
-0065:  MOVWF  33
-0066:  MOVF   2F,W
-0067:  MOVWF  35
-0068:  MOVF   2E,W
-0069:  MOVWF  34
-006A:  MOVF   33,W
-006B:  MOVWF  37
-006C:  MOVF   32,W
-006D:  MOVWF  36
-*
-0082:  MOVF   79,W
-0083:  MOVWF  2F
-0084:  MOVF   78,W
-0085:  MOVWF  2E
 ....................    uint16 Ton = temp + minPulseServo; 
-0086:  MOVF   26,W
-0087:  ADDWF  2E,W
-0088:  MOVWF  30
-0089:  MOVF   2F,W
-008A:  MOVWF  31
-008B:  MOVF   27,W
-008C:  BTFSC  03.0
-008D:  INCFSZ 27,W
-008E:  ADDWF  31,F
 ....................     
 ....................    output_high(PulseServo); 
-008F:  BSF    03.5
-0090:  BCF    06.0
-0091:  BCF    03.5
-0092:  BSF    06.0
 ....................    delay_us(Ton); 
-0093:  MOVF   31,W
-0094:  MOVWF  32
-0095:  INCF   32,F
-0096:  DECF   32,F
-0097:  BTFSC  03.2
-0098:  GOTO   09D
-0099:  MOVLW  FF
-009A:  MOVWF  35
-009B:  CALL   004
-009C:  GOTO   096
-009D:  MOVF   30,W
-009E:  MOVWF  35
-009F:  CALL   004
 ....................    output_low(PulseServo); 
-00A0:  BSF    03.5
-00A1:  BCF    06.0
-00A2:  BCF    03.5
-00A3:  BCF    06.0
 ....................    delay_us(T - Ton); 
-00A4:  MOVF   30,W
-00A5:  SUBWF  20,W
-00A6:  MOVWF  32
-00A7:  MOVF   21,W
-00A8:  MOVWF  33
-00A9:  MOVF   31,W
-00AA:  BTFSS  03.0
-00AB:  INCFSZ 31,W
-00AC:  SUBWF  33,F
-00AD:  MOVF   33,W
-00AE:  MOVWF  34
-00AF:  INCF   34,F
-00B0:  DECF   34,F
-00B1:  BTFSC  03.2
-00B2:  GOTO   0B7
-00B3:  MOVLW  FF
-00B4:  MOVWF  35
-00B5:  CALL   004
-00B6:  GOTO   0B0
-00B7:  MOVF   32,W
-00B8:  MOVWF  35
-00B9:  CALL   004
-00BA:  BCF    0A.3
-00BB:  BCF    0A.4
-00BC:  GOTO   0FE (RETURN)
 .................... } 
 ....................  
+....................  
+....................  
+.................... void rotateToSec(int16 s)  
+.................... { 
+....................    Servo(on); 
+*
+0062:  BSF    07.1
+0063:  BCF    2A.1
+0064:  MOVF   2A,W
+0065:  BSF    03.5
+0066:  MOVWF  07
+....................    while (s > 0) { 
+0067:  BCF    03.5
+0068:  MOVF   2D,F
+0069:  BTFSS  03.2
+006A:  GOTO   06E
+006B:  MOVF   2E,F
+006C:  BTFSC  03.2
+006D:  GOTO   08C
+....................       delay_ms(900); // 1 second 
+006E:  MOVLW  04
+006F:  MOVWF  2F
+0070:  MOVLW  E1
+0071:  MOVWF  30
+*
+0085:  DECFSZ 2F,F
+0086:  GOTO   070
+....................       s--; 
+0087:  MOVF   2D,W
+0088:  BTFSC  03.2
+0089:  DECF   2E,F
+008A:  DECF   2D,F
+008B:  GOTO   068
+....................    } 
+....................    Servo(off); 
+008C:  BCF    07.1
+008D:  BCF    2A.1
+008E:  MOVF   2A,W
+008F:  BSF    03.5
+0090:  MOVWF  07
+0091:  BCF    03.5
+0092:  RETURN
+.................... } 
+....................  
+....................  
+....................  
+.................... void rotateToMin(int16 m)  
+.................... { 
+....................    Servo(on); 
+0093:  BSF    07.1
+0094:  BCF    2A.1
+0095:  MOVF   2A,W
+0096:  BSF    03.5
+0097:  MOVWF  07
+....................    while (m > 0) { 
+0098:  BCF    03.5
+0099:  MOVF   2B,F
+009A:  BTFSS  03.2
+009B:  GOTO   09F
+009C:  MOVF   2C,F
+009D:  BTFSC  03.2
+009E:  GOTO   0A8
+....................       rotateToSec(58); // 1 minute  
+009F:  CLRF   2E
+00A0:  MOVLW  3A
+00A1:  MOVWF  2D
+00A2:  CALL   062
+....................       m--; 
+00A3:  MOVF   2B,W
+00A4:  BTFSC  03.2
+00A5:  DECF   2C,F
+00A6:  DECF   2B,F
+00A7:  GOTO   099
+....................    } 
+....................    Servo(off); 
+00A8:  BCF    07.1
+00A9:  BCF    2A.1
+00AA:  MOVF   2A,W
+00AB:  BSF    03.5
+00AC:  MOVWF  07
+00AD:  BCF    03.5
+00AE:  BCF    0A.3
+00AF:  BCF    0A.4
+00B0:  GOTO   0DB (RETURN)
+.................... } 
+....................  
+....................  
+....................  
+.................... void rotateToHour(int16 h)  
+.................... { 
+....................    Servo(on); 
+....................    while (h > 0) { 
+....................       rotateToMin(60); // 1 hour  
+....................       h--; 
+....................    } 
+....................    Servo(off); 
+.................... } 
+....................  
+....................  
+.................... #include "button.h" 
+.................... #define rotateBtn PIN_D7 
+....................  
+....................  
+....................  
+.................... int isPressed(int16 btn) 
+.................... { 
+....................    if (!input(btn)) { 
+*
+003B:  MOVF   2B,W
+003C:  MOVWF  2D
+003D:  MOVLW  01
+003E:  MOVWF  2E
+003F:  CLRF   30
+0040:  MOVLW  80
+0041:  MOVWF  2F
+0042:  CALL   004
+0043:  MOVF   2B,W
+0044:  MOVWF  2D
+0045:  CLRF   2F
+0046:  CLRF   2E
+0047:  CALL   024
+0048:  BTFSC  78.0
+0049:  GOTO   05D
+....................       while (!input(btn));     // debounce 
+004A:  MOVF   2B,W
+004B:  MOVWF  2D
+004C:  MOVLW  01
+004D:  MOVWF  2E
+004E:  CLRF   30
+004F:  MOVLW  80
+0050:  MOVWF  2F
+0051:  CALL   004
+0052:  MOVF   2B,W
+0053:  MOVWF  2D
+0054:  CLRF   2F
+0055:  CLRF   2E
+0056:  CALL   024
+0057:  BTFSS  78.0
+0058:  GOTO   04A
+....................       return 1; 
+0059:  MOVLW  01
+005A:  MOVWF  78
+005B:  GOTO   05F
+....................    }    
+005C:  GOTO   05F
+....................    else 
+....................       return 0; 
+005D:  MOVLW  00
+005E:  MOVWF  78
+005F:  BCF    0A.3
+0060:  BCF    0A.4
+0061:  GOTO   0D4 (RETURN)
+.................... } 
 ....................  
 ....................  
 ....................  
 ....................  
 .................... void main()  
 *
-00D3:  MOVF   03,W
-00D4:  ANDLW  1F
-00D5:  MOVWF  03
-00D6:  MOVLW  4E
-00D7:  MOVWF  21
-00D8:  MOVLW  20
-00D9:  MOVWF  20
-00DA:  CLRF   23
-00DB:  CLRF   22
-00DC:  CLRF   25
-00DD:  MOVLW  B4
-00DE:  MOVWF  24
-00DF:  MOVLW  01
-00E0:  MOVWF  27
-00E1:  MOVLW  F4
-00E2:  MOVWF  26
-00E3:  MOVLW  09
-00E4:  MOVWF  29
-00E5:  MOVLW  C4
-00E6:  MOVWF  28
-00E7:  BSF    03.5
-00E8:  BSF    1F.0
-00E9:  BSF    1F.1
-00EA:  BSF    1F.2
-00EB:  BCF    1F.3
-00EC:  MOVLW  07
-00ED:  MOVWF  1C
-00EE:  BCF    03.7
+00B1:  MOVF   03,W
+00B2:  ANDLW  1F
+00B3:  MOVWF  03
+00B4:  MOVLW  4E
+00B5:  MOVWF  21
+00B6:  MOVLW  20
+00B7:  MOVWF  20
+00B8:  CLRF   23
+00B9:  CLRF   22
+00BA:  CLRF   25
+00BB:  MOVLW  B4
+00BC:  MOVWF  24
+00BD:  MOVLW  01
+00BE:  MOVWF  27
+00BF:  MOVLW  F4
+00C0:  MOVWF  26
+00C1:  MOVLW  09
+00C2:  MOVWF  29
+00C3:  MOVLW  C4
+00C4:  MOVWF  28
+00C5:  MOVLW  FF
+00C6:  MOVWF  2A
+00C7:  BSF    03.5
+00C8:  BSF    1F.0
+00C9:  BSF    1F.1
+00CA:  BSF    1F.2
+00CB:  BCF    1F.3
+00CC:  MOVLW  07
+00CD:  MOVWF  1C
+00CE:  BCF    03.7
 .................... { 
-....................    while(TRUE)  
+....................    while (TRUE)  
 ....................    { 
-....................       for (uint16 angle = 0; angle <= 180; angle += 30) { 
-00EF:  BCF    03.5
-00F0:  CLRF   2B
-00F1:  CLRF   2A
-00F2:  MOVF   2B,F
-00F3:  BTFSS  03.2
-00F4:  GOTO   10A
-00F5:  MOVF   2A,W
-00F6:  SUBLW  B4
-00F7:  BTFSS  03.0
-00F8:  GOTO   10A
-....................          rotateServo(angle); 
-00F9:  MOVF   2B,W
-00FA:  MOVWF  2D
-00FB:  MOVF   2A,W
-00FC:  MOVWF  2C
-00FD:  GOTO   013
-....................          delay_ms(500); 
-00FE:  MOVLW  02
-00FF:  MOVWF  2C
-0100:  MOVLW  FA
-0101:  MOVWF  2D
-0102:  GOTO   0BD
-0103:  DECFSZ 2C,F
-0104:  GOTO   100
-0105:  MOVLW  1E
-0106:  ADDWF  2A,F
-0107:  BTFSC  03.0
-0108:  INCF   2B,F
-0109:  GOTO   0F2
+....................       //TODO: User Code 
+....................       if (isPressed(rotateBtn)) { 
+00CF:  BCF    03.5
+00D0:  CLRF   2C
+00D1:  MOVLW  47
+00D2:  MOVWF  2B
+00D3:  GOTO   03B
+00D4:  MOVF   78,F
+00D5:  BTFSC  03.2
+00D6:  GOTO   0DF
+....................          rotateToMin(1); 
+00D7:  CLRF   2C
+00D8:  MOVLW  01
+00D9:  MOVWF  2B
+00DA:  GOTO   093
+....................          rotateToSec(5); 
+00DB:  CLRF   2E
+00DC:  MOVLW  05
+00DD:  MOVWF  2D
+00DE:  CALL   062
 ....................       } 
-010A:  GOTO   0F0
+00DF:  GOTO   0D0
 ....................    } 
 .................... } 
-010B:  SLEEP
+00E0:  SLEEP
 
 Configuration Fuses:
    Word  1: 3F32   HS NOWDT PUT NOBROWNOUT NOLVP NOCPD NOWRT NODEBUG NOPROTECT

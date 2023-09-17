@@ -1,4 +1,4 @@
-#define PulseServo PIN_B0
+#define PulseServo PIN_C1
 
 
 

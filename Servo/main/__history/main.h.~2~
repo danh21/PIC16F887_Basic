@@ -7,4 +7,12 @@
 
 #use delay(crystal=20000000)
 
-#define pulseCtrlServo PIN_B0
+#define Motor(x)     output_bit(PIN_C1, x)
+#define Btn_rotate   input(PIN_D7)
+
+void rotateToSec(int16 s) {
+   while (s > 0) {
+      delay_ms(1000);
+      s--;
+   }
+}

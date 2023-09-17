@@ -1,4 +1,4 @@
-#define PulseServo PIN_B0
+#define PulseServo PIN_C1
 
 
 
@@ -34,7 +34,7 @@ void rotateToSec(int16 s)
 {
    Servo(on);
    while (s > 0) {
-      delay_ms(1000); // 1 second
+      delay_ms(900); // 1 second
       s--;
    }
    Servo(off);

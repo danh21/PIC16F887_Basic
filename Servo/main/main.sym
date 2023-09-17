@@ -1,8 +1,8 @@
 004-005 @READ_PROGRAM_MEMORY8.P1
 004-005 @WRITE_PROGRAM_MEMORY8.P2
 008     PSP_DATA
-015     CCP_1
 015     CCP_1_LOW
+015     CCP_1
 016     CCP_1_HIGH
 01B     CCP_2_LOW
 01B     CCP_2
@@ -12,23 +12,17 @@
 024-025 maxAngle
 026-027 minPulseServo
 028-029 maxPulseServo
-02A-02B MAIN.angle
-02C-02D rotateServo.angle
-02C     MAIN.@SCRATCH1
-02D     @delay_ms1.P1
-02E-02F rotateServo.temp
-030-031 rotateServo.Ton
-032     rotateServo.@SCRATCH1
-033     rotateServo.@SCRATCH2
-034-035 @MUL1616.P1
-034     rotateServo.@SCRATCH3
-035     @delay_us1.P1
-035     rotateServo.@SCRATCH4
-036-037 @DIV1616.P1
-036-037 @MUL1616.P2
-038-039 @DIV1616.P1
-038     @MUL1616.@SCRATCH1
-03A     @DIV1616.@SCRATCH1
+02A     @TRIS_C
+02B-02C rotateToMin.m
+02B-02C isPressed.btn
+02D     @READBITA.P1
+02D     @WRITEBITA.P2
+02D-02E rotateToSec.s
+02E     @WRITEBITA.P1
+02E-02F @READBITA.P2
+02F-030 @WRITEBITA.P1
+02F     rotateToSec.@SCRATCH1
+030     @delay_ms1.P1
 077     @SCRATCH
 078     @SCRATCH
 078     _RETURN_
@@ -40,25 +34,27 @@
 10D-10E @READ_PROGRAM_MEMORY8.P2
 
 ROM Allocation:
-000004  @delay_us1
-000013  rotateServo
-000031  @DIV1616
-00006E  @MUL1616
-0000BD  @delay_ms1
-0000D3  MAIN
-0000D3  @cinit1
-0000EE  @cinit2
+000004  @WRITEBITA
+000024  @READBITA
+00003B  isPressed
+000062  rotateToSec
+000072  @delay_ms1
+000093  rotateToMin
+0000B1  MAIN
+0000B1  @cinit1
+0000CE  @cinit2
 
 Project Directory:
-    D:\cd\PIC_16F887A\Project\PIC C\ctrl_servo\main\
+    D:\cd\PIC_16F887A\Project\PIC C\motor_rotate_toTime_byBtn\
 
 Project Files:
-    main.c                                                  [16-Sep-23 12:05  CRC=D872A938]
-    main.h                                                  [16-Sep-23 11:59  CRC=2EB8624F]
-    ..\..\..\..\..\..\phan_mem\PICC\Devices\16F877A.h       [10-Sep-23 11:04  CRC=81334808]
-    servo.h                                                 [16-Sep-23 12:02  CRC=8F7D6F62]
+    main.c                                                  [17-Sep-23 11:33  CRC=D872A938]
+    main.h                                                  [17-Sep-23 11:32  CRC=2EB8624F]
+    ..\..\..\..\..\phan_mem\PICC\Devices\16F877A.h          [10-Sep-23 11:04  CRC=81334808]
+    servo.h                                                 [17-Sep-23 11:45  CRC=EE027E47]
+    button.h                                                [17-Sep-23 11:33  CRC=D872A938]
 
-Source signature=A7593253
+Source signature=27462446
 
 Units:
     main (main)

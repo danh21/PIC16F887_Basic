@@ -16,7 +16,7 @@ BuildRequired=1
 Include=<default>\;D:\phan_mem\PICC\Devices\;D:\phan_mem\PICC\Drivers\
 Library=
 LinkerScript=
-[D:\cd\PIC 16F877A\Designs\PIC C\ctrl_servo\main]
+[D:\cd\PIC 16F877A\Designs\PIC C\motor_rotate_toTime_byBtn\main]
 Type=4
 [mru-list]
 1=main.c
@@ -24,7 +24,8 @@ Type=4
 1=main.c
 2=main.h
 3=servo.h
-4=
+4=button.h
+5=
 [main.c]
 Type=4
 Path=

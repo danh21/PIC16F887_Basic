@@ -1,0 +1,16 @@
+#include <main.h>
+
+void main() {
+   
+   while(TRUE) {
+      //TODO: User Code
+      if (!Btn_rotate) {
+         while(!Btn_rotate);
+         Motor(1);
+         rotateToMin(1);
+         //rotateToSec(5);
+         Motor(0);
+      }
+   }
+
+}
