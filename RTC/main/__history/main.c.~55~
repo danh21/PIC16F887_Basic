@@ -1,0 +1,34 @@
+#include <main.h>
+
+int initHour = 0, initMinute = 0, initSecond = 0;
+
+void main() {  
+   char name[16] = "Digital Clock";
+   char time[16];
+   int h = initHour;
+   int min = initMinute;
+   int sec = initSecond;
+   
+   lcd_init();
+   lcd_clear();   
+   
+   lcd_gotoxy(3,1);  
+   lcd_puts(name);
+   
+   while(TRUE) {    
+      for (h = 0; h < 24; h++) {
+         for (min = 0; min < 60; min++) {
+            for (sec = 0; sec < 60; sec++) {
+               sprintf(time, "%d2:%d:%d", h, min, sec);
+               lcd_gotoxy(5,2);     
+               lcd_puts(time);
+               delay_ms(100);
+            }
+            //sec = 0;
+         }
+         //min = 0;
+      }
+      //h = 0;
+   }
+
+}

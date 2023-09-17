@@ -1,0 +1,19 @@
+#include <main.h>
+
+int hour 6, minute = 30, second = 32;
+
+void main() {  
+   lcd_init();
+   lcd_clear();
+   
+   lcd_gotoxy(3,1);  // col 6, row 1
+   lcd_puts("Digital Clock");
+   
+   while(TRUE) {
+      
+      
+      lcd_gotoxy(5,2);  // col 5, row 2
+      lcd_puts(string2);
+   }
+
+}

@@ -27,3 +27,5 @@
     - LCD: displays information on 16x2 LCD.
 
     - ADC: reads ADC and displays value on LCD.
+
+    - RTC: displays real time clock on LCD.
