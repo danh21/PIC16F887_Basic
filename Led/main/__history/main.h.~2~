@@ -7,6 +7,3 @@
 
 #use delay(crystal=20000000)
 
-#define Shift_CLK(x) output_bit(PIN_C0, x)
-#define Data(x) output_bit(PIN_C1, x)
-#define Latch_CLK(x) output_bit(PIN_C2 x)

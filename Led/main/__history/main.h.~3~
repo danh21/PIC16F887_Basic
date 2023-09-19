@@ -7,6 +7,4 @@
 
 #use delay(crystal=20000000)
 
-#define Shift_CLK(x) output_bit(PIN_C0, x)
-#define Serial_Data(x) output_bit(PIN_C1, x)
-#define Latch_CLK(x) output_bit(PIN_C2 x)
+#define LED PIN_B0

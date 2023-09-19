@@ -1,58 +1,36 @@
 #include <main.h>
 
+int count = 0; 
+int countOverflow = yourDelay*1000000 / thresOverflow;   //us
+
+#INT_TIMER1
+void int_blink(void) {
+   count++;
+   if (count == countOverflow) {
+      count = 0;
+      output_toggle(LED);
+   }
+}
+
+void Delay4us(int t) {
+   while(t>0)
+      t--;
+} 
+
 void main() {
-   char arrData[3] = {0x55, 0x01, 0x80};
-   Data_Outs(arrData);
+   /*output_low(LED);  
    
+   setup_timer_1(T1_INTERNAL | T1_DIV_BY_1); // mode
+   set_timer1(0);
+   enable_interrupts(INT_TIMER1);
+   enable_interrupts(GLOBAL);*/
+         
    while(TRUE) {
-      /* // on gradually off gradually
-      Data_Out(0b00000000);
-      delay_ms(200);
-      
-      Data_Out(0b00000001);
-      delay_ms(200);  
-      
-      Data_Out(0b00000011);
-      delay_ms(200);
-      
-      Data_Out(0b00000111);
-      delay_ms(200);
-      
-      Data_Out(0b00001111);
-      delay_ms(200);
-      
-      Data_Out(0b00011111);
-      delay_ms(200);
-      
-      Data_Out(0b00111111);
-      delay_ms(200);
-      
-      Data_Out(0b01111111);
-      delay_ms(200);
-      
-      Data_Out(0b11111111);
-      delay_ms(200);
-      
-      Data_Out(0b11111110);
-      delay_ms(200);
-      
-      Data_Out(0b11111100);
-      delay_ms(200);
-      
-      Data_Out(0b11111000);
-      delay_ms(200);
-      
-      Data_Out(0b11110000);
-      delay_ms(200);
-      
-      Data_Out(0b11100000);
-      delay_ms(200);
-      
-      Data_Out(0b11000000);
-      delay_ms(200);
-      
-      Data_Out(0b10000000);
-      delay_ms(200); 
-      */
+      output_bit(LED, 0);
+      //Delay4us(5);
+      delay_us(1);
+      output_bit(LED, 1);
+      delay_us(1);
+      //Delay4us(5); 
    }
 }

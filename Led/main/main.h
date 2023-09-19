@@ -5,27 +5,19 @@
 #FUSES NOBROWNOUT               //No brownout reset
 #FUSES NOLVP                    //No low voltage prgming, B3(PIC16) or B5(PIC18) used for I/O
 
-#use delay(crystal=20M)
+#use delay(crystal=20000000)
 
 
 
-#include "74HC595.h"
+/* CONFIG */
+#define LED PIN_B0
 
-#define numOfLeds 24
+float period = 1;                // s
+float timer_div_by = 2;          // T1_DIV_BY_2 mode
 
 
 
-void lightUp_fadeDown()
-{
-   int i;
-   
-   for (i = 0; i < numOfLeds; i++) {
-      send_bit(1);
-      delay_ms(200);
-   }
-   
-   for (i = 0; i < numOfLeds; i++) {
-      send_bit(0);
-      delay_ms(200);
-   }
-}
+float thresOverflow = timer_div_by * 104857.6 / 8;             // help on "setup_timer_1"
+
+int count = 0; 
+int countOverflow = (period / 2) * 1000000 / thresOverflow;    // us

@@ -7,4 +7,7 @@
 
 #use delay(crystal=20000000)
 
-#include "74HC595.h"
+#define LED PIN_B0
+
+float yourDelay = 0.5; // s
+float thresholdMode = 104857.6; // T1_DIV_BY_8 mode

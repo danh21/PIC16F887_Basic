@@ -1,11 +1,10 @@
 ÀÄmain
-   ÀÄMAIN  0/48  Ram=4
-      ÃÄ@cinit1  (Inline)  Ram=0
-      ÃÄsend_bytes  0/254  Ram=4
-      ³  ÀÄsend_byte  (Inline)  Ram=2
-      ÃÄ@delay_ms1  0/20  Ram=1
-      ÀÄlightUp_fadeDown  0/28  Ram=1
-         ÃÄsend_bit  0/36  Ram=1
-         ÃÄ@delay_ms1  0/20  Ram=1
-         ÃÄsend_bit  0/36  Ram=1
-         ÀÄ@delay_ms1  0/20  Ram=1
+   ÃÄMAIN  0/187  Ram=0
+   ³  ÀÄ@cinit1  (Inline)  Ram=4
+   ³     ÃÄ@MULFF  0/117  Ram=13
+   ³     ÃÄ@DIVFF  0/202  Ram=14
+   ³     ÃÄ@DIVFF  0/202  Ram=14
+   ³     ÃÄ@MULFF  0/117  Ram=13
+   ³     ÃÄ@DIVFF  0/202  Ram=14
+   ³     ÀÄ@SFTOI  (Inline)  Ram=4
+   ÀÄint_blink  0/15  Ram=0

@@ -1,10 +1,25 @@
 #include <main.h>
 
+int count = 0; 
+int countOverflow = yourDelay / thresholdMode;
+
+#INT_TIMER1
+void int_blink(void) {
+   count++;
+   if (count == countOverflow) {
+      count = 0;
+      output_toggle(LED);
+   }
+}
+
 void main() {
+   setup_timer_1(T1_INTERNAL | T1_DIV_BY_8);
+   set_timer1(0);
+   enable_interrupts(INT_TIMER1);
+   enable_interrupts(GLOBAL);
+   output_bit(LED, 0);
+    
    while(TRUE) {
-      //TODO: User Code
-      Data(1);
-      Shift_CLK(0); Shift_CLK(1);
-      Latch_CLK(0); Latch_CLK(1);
+      //TODO: User Code      
    }
 }

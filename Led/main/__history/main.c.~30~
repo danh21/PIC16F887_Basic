@@ -1,64 +1,28 @@
 #include <main.h>
 
-void main() {
-//!   char arr[3] = {0x55, 0x01, 0x80};
-//!   int len = sizeof(arr) / sizeof(arr[0]);
-//!   Data_Outs(arr, len);
-   
-   while(TRUE) {
-      // on gradually off gradually
-//!      Data_Out(0b00000000);
-//!      delay_ms(200);
-//!      
-//!      Data_Out(0b00000001);
-//!      delay_ms(200);  
-//!      
-//!      Data_Out(0b00000011);
-//!      delay_ms(200);
-//!      
-//!      Data_Out(0b00000111);
-//!      delay_ms(200);
-//!      
-//!      Data_Out(0b00001111);
-//!      delay_ms(200);
-//!      
-//!      Data_Out(0b00011111);
-//!      delay_ms(200);
-//!      
-//!      Data_Out(0b00111111);
-//!      delay_ms(200);
-//!      
-//!      Data_Out(0b01111111);
-//!      delay_ms(200);
-//!      
-//!      Data_Out(0b11111111);
-//!      delay_ms(200);
-//!      
-//!      Data_Out(0b11111110);
-//!      delay_ms(200);
-//!      
-//!      Data_Out(0b11111100);
-//!      delay_ms(200);
-//!      
-//!      Data_Out(0b11111000);
-//!      delay_ms(200);
-//!      
-//!      Data_Out(0b11110000);
-//!      delay_ms(200);
-//!      
-//!      Data_Out(0b11100000);
-//!      delay_ms(200);
-//!      
-//!      Data_Out(0b11000000);
-//!      delay_ms(200);
-//!      
-//!      Data_Out(0b10000000);
-//!      delay_ms(200); 
 
-      Serial_Data(1);
-      Shift_CLK_transition;
-      
-      Latch_CLK_transition;
-      delay_ms(200);
+
+#INT_TIMER1
+void int_blink(void) 
+{
+   count++;
+   if (count == countOverflow) {
+      count = 0;
+      output_toggle(LED);
    }
+}
+
+
+
+void main() 
+{
+   output_low(LED);  
+   
+   setup_timer_1(T1_INTERNAL | T1_DIV_BY_1);    // init timer
+   set_timer1(0);                               // Set the count value 
+   
+   enable_interrupts(INT_TIMER1);
+   enable_interrupts(GLOBAL);                   // allow any of the specified interrupts previously enabled to become active
+         
+   while (TRUE);
 }

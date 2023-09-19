@@ -1,14 +1,34 @@
 #include <main.h>
 
+int count = 0; 
+int countOverflow = yourDelay*1000000 / thresOverflow;   //us
+
+#INT_TIMER1
+void int_blink(void) {
+   count++;
+   if (count == countOverflow) {
+      count = 0;
+      output_toggle(LED);
+   }
+}
+
+void Delay4us(int16 t) {
+   while(t>0)
+      t--;
+}
+
 void main() {
-   int bit = 1;
-     
+   //output_low(LED);  
+   
+   /*setup_timer_1(T1_INTERNAL | T1_DIV_BY_1); // mode
+   set_timer1(0);
+   enable_interrupts(INT_TIMER1);
+   enable_interrupts(GLOBAL);*/
+         
    while(TRUE) {
-      //TODO: User Code
-      Serial_Data(bit);
-      Shift_CLK(0); Shift_CLK(1); // A low– to–high transition on this input causes the data at the Serial Input pin to be shifted into the 8–bit shift register
-      Latch_CLK(0); Latch_CLK(1); // A low–to–high transition on this input latches the shift register data
-      bit = !bit;
-      delay_ms(500);
+      output_low(LED);
+      Delay4us(1);
+      output_high(LED);
+      Delay4us(1);
    }
 }

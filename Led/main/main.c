@@ -1,15 +1,28 @@
 #include <main.h>
 
-void main() {
-   char arr[3] = {0x80, 0x55, 0x01};
-   
-   send_bytes(arr, 3);
-   delay_ms(1000);
-   Reset;
-   
-   while(TRUE) {
-      // on gradually, off gradually
-      lightUp_fadeDown();
+
+
+#INT_TIMER1
+void int_blink(void) 
+{
+   count++;
+   if (count == countOverflow) {
+      count = 0;
+      output_toggle(LED);
    }
-      
+}
+
+
+
+void main() 
+{
+   output_low(LED);  
+   
+   setup_timer_1(T1_INTERNAL | T1_DIV_BY_2);    // init timer
+   set_timer1(0);                               // Set the count value 
+   
+   enable_interrupts(INT_TIMER1);
+   enable_interrupts(GLOBAL);                   // allow any of the specified interrupts previously enabled to become active
+         
+   while (TRUE);
 }
