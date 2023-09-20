@@ -1,16 +1,11 @@
 #include <main.h>
 
 void main() {
+   setup_timer_2(T2_DIV_BY_16, 100, 1);
+   setup_ccp1(CCP_PWM);
+   setup_ccp2(CCP_PWM);
+   set_pwm1_duty(70);
+   set_pwm2_duty(0);
    
-   while(TRUE) {
-      //TODO: User Code
-      if (!Btn_rotate) {
-         while(!Btn_rotate);
-         Motor(1);
-         //rotateToMin(1);
-         rotateToSec(60);
-         Motor(0);
-      }
-   }
-
+   while(TRUE);
 }

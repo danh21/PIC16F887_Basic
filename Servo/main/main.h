@@ -9,5 +9,12 @@
 
 
 
-#include "servo.h"
-#include "button.h"
+#define motorRotateForward    {set_pwm1_duty(100); set_pwm2_duty(0);}
+#define motorRotateBackward   {set_pwm1_duty(0); set_pwm2_duty(100);}
+
+void setup(void)
+{
+   setup_timer_2(T2_DIV_BY_16, 100, 1);
+   setup_ccp1(CCP_PWM);                   // Enable Pulse Width Modulator
+   setup_ccp2(CCP_PWM);
+}

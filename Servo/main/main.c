@@ -1,13 +1,12 @@
 #include <main.h>
 
-void main() 
-{
-   while (TRUE) 
-   {
-      //TODO: User Code
-      if (isPressed(rotateBtn)) {
-         rotateToMin(1);
-         rotateToSec(5);
-      }
+void main() {
+   setup(); 
+     
+   while(TRUE) {
+      motorRotateForward;
+      delay_ms(3000);
+      motorRotateBackward;
+      delay_ms(3000);
    }
 }

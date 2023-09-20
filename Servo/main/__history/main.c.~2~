@@ -2,13 +2,9 @@
 
 void main() {
    
+
    while(TRUE) {
       //TODO: User Code
-      if (!Btn_rotate) {
-         Motor(1);
-         rotateToSec(3);
-         Motor(0);
-      }
+      
    }
-
 }

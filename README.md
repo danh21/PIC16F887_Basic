@@ -22,6 +22,7 @@
     - Servo: 
         + Version 1: rotates motor servo by controlling pulse.
         + Version 2: uses button to rotate motor servo by timing.
+        + Version 3: uses PWM to rotate motor servo by period.
 
     - Keypad: uses keypad to enter characters, then displays letters on virtual terminal by UART.
 

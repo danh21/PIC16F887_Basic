@@ -1,16 +1,11 @@
 #include <main.h>
 
 void main() {
+   setup_timer_2(T2_DIV_BY_1, 100, 1);
+   
    
    while(TRUE) {
       //TODO: User Code
-      if (!Btn_rotate) {
-         while(!Btn_rotate);
-         Motor(1);
-         rotateToMin(1);
-         rotateToSec(3);
-         Motor(0);
-      }
+      
    }
-
 }

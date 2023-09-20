@@ -7,26 +7,14 @@
 
 #use delay(crystal=20000000)
 
-#define Motor(x)     output_bit(PIN_C1, x)
-#define Btn_rotate   input(PIN_D7)
 
-void rotateToSec(int16 s) {
-   while (s > 0) {
-      delay_ms(1000); // 1 second
-      s--;
-   }
-}
 
-void rotateToMin(int16 m) {
-   while (m > 0) {
-      rotateToSec(60); // 1 minute 
-      m--;
-   }
-}
+#define motorRotateForward    {set_pwm1_duty(100); set_pwm2_duty(0);}
+#define motorRotateBackward   {set_pwm1_duty(0); set_pwm2_duty(100);}
 
-void rotateToHour(int16 h) {
-   while (h > 0) {
-      rotateToMin(60); // 1 hour 
-      h--;
-   }
+void setup(void)
+{
+//!   setup_timer_2(T2_DIV_BY_16, 100, 1);
+   setup_ccp1(CCP_PWM);                   // Enable Pulse Width Modulator
+   setup_ccp2(CCP_PWM);
 }
