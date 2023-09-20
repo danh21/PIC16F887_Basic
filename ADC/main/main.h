@@ -19,3 +19,5 @@
 #define LCD_DATA7       PIN_D7
 
 #include <LCD.c>
+
+#define channel 5

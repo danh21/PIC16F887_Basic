@@ -1,24 +1,25 @@
 #include <main.h>
 
 void main() {
-   int16 adc; 
-   char string[17];
+   float adc, volt;  
+   char string[16];
    
    lcd_init();
-   lcd_clear();
+   delay_ms(500);
   
    setup_adc(ADC_CLOCK_INTERNAL);
-   setup_adc_ports(AN0);   // important
-   set_adc_channel(2);     // AN2
+   setup_adc_ports(ALL_ANALOG);     // Sets up the ADC pins to be analog
+   set_adc_channel(5);              // config AN5
+   delay_us(10);
    
-   while(TRUE) {
+   while (TRUE) {
       adc = read_adc();
-      sprintf(string, "ADC = %04ld", adc);  // 4 numbers
+      volt = 5 * adc / 1023;        // 5V - 1023adc
+      sprintf(string, "VOLT = %.3f V", volt);
       
-      lcd_gotoxy(4,1);                        
+      lcd_gotoxy(2, 1);                        
       lcd_puts(string);
       
       delay_ms(100);
-   }
-   
+   } 
 }

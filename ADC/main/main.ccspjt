@@ -16,15 +16,16 @@ BuildRequired=1
 Include=<default>\;D:\phan_mem\PICC\Devices\;D:\phan_mem\PICC\Drivers\
 Library=
 LinkerScript=
-[D:\cd\PIC 16F877A\Designs\PIC C\read_ADC\main]
+[D:\cd\PIC 16F877A\Designs\PIC C\read_voltage_DC\main]
 Type=4
 [mru-list]
 1=main.c
 [Opened Files]
 1=main.c
 2=main.h
-3=..\..\..\..\..\phan_mem\PICC\Drivers\LCD.c
+3=..\..\..\..\..\..\phan_mem\PICC\Drivers\LCD.c
 4=
+5=
 [main.c]
 Type=4
 Path=

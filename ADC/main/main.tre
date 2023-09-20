@@ -1,5 +1,5 @@
 ÀÄmain
-   ÀÄMAIN  0/91  Ram=23
+   ÀÄMAIN  0/161  Ram=32
       ÃÄ@cinit1  (Inline)  Ram=0
       ÃÄlcd_init  0/70  Ram=6
       ³  ÃÄ@delay_ms1  0/20  Ram=1
@@ -14,11 +14,23 @@
       ³     ÃÄlcd_send_nibble  0/48  Ram=1
       ³     ÀÄlcd_send_nibble  0/48  Ram=1
       ÃÄ@delay_ms1  0/20  Ram=1
-      ÃÄ@PSTRINGCN7_667  0/89  Ram=5
+      ÃÄ@ITOF  0/31  Ram=2
+      ÃÄ@MULFF  0/117  Ram=13
+      ÃÄ@DIVFF  0/204  Ram=14
+      ÃÄ@PSTRINGCN7_676  0/89  Ram=5
       ³  ÃÄ@SPRINTF  0/13  Ram=1
       ³  ÀÄ@SPRINTF  0/13  Ram=1
-      ÃÄ@PRINTF_LD_667  0/130  Ram=9
-      ³  ÀÄ@SPRINTF  0/13  Ram=1
+      ÃÄ@PRINTF_L32D_676FPFPF  0/226  Ram=13
+      ³  ÃÄ@MULFF  0/117  Ram=13
+      ³  ÃÄ@FTOSD  (Inline)  Ram=5
+      ³  ÃÄ@DIV3232  0/79  Ram=13
+      ³  ÃÄ@SPRINTF  0/13  Ram=1
+      ³  ÃÄ@SPRINTF  0/13  Ram=1
+      ³  ÃÄ@SPRINTF  0/13  Ram=1
+      ³  ÃÄ@SPRINTF  0/13  Ram=1
+      ³  ÀÄ@DIV3232  0/79  Ram=13
+      ÃÄ@SPRINTF  0/13  Ram=1
+      ÃÄ@SPRINTF  0/13  Ram=1
       ÃÄlcd_gotoxy  0/18  Ram=4
       ³  ÀÄlcd_send_byte  0/94  Ram=3
       ³     ÀÄ*

@@ -1,22 +1,23 @@
 #include <main.h>
 
-void main()
-{
-   int16 adc; 
-   char chuoi[17];
+void main() {
+   float adc; 
+   char string[16];
+   
    lcd_init();
    lcd_clear();
   
    setup_adc(ADC_CLOCK_INTERNAL);
-   setup_adc_ports(AN0);
-   set_adc_channel(0);
+   setup_adc_ports(ALL_ANALOG);   // 16F877A.h
+   set_adc_channel(5);           // AN5
    
-   while(TRUE)
-   {
+   while(TRUE) {
       adc = read_adc();
-      lcd_gotoxy(1,1);                 //hang 1 cot 1
-      sprintf(chuoi,"ADC=%04ld",adc);  //hien thi 4 so
-      lcd_puts(chuoi);
+      sprintf(string, "VOLT = %f.2", adc);  // 4 numbers
+      
+      lcd_gotoxy(4,1);                        
+      lcd_puts(string);
+      
       delay_ms(100);
    }
    
