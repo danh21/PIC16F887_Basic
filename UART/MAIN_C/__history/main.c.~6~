@@ -1,0 +1,11 @@
+#include <main.h>
+
+void main()
+{
+   while(TRUE)
+   {
+      //TODO: User Code
+      printf("Hello World!\r\n");  
+      delay_ms(500);
+   }
+}

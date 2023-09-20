@@ -1,0 +1,11 @@
+D:\cd\PIC_16F877A\Designs\PIC C\UART\FORM_CS\FORM_CS\bin\Debug\FORM_CS.exe.config
+D:\cd\PIC_16F877A\Designs\PIC C\UART\FORM_CS\FORM_CS\bin\Debug\FORM_CS.exe
+D:\cd\PIC_16F877A\Designs\PIC C\UART\FORM_CS\FORM_CS\bin\Debug\FORM_CS.pdb
+D:\cd\PIC_16F877A\Designs\PIC C\UART\FORM_CS\FORM_CS\obj\Debug\FORM_CS.csproj.AssemblyReference.cache
+D:\cd\PIC_16F877A\Designs\PIC C\UART\FORM_CS\FORM_CS\obj\Debug\FORM_CS.csproj.SuggestedBindingRedirects.cache
+D:\cd\PIC_16F877A\Designs\PIC C\UART\FORM_CS\FORM_CS\obj\Debug\FORM_CS.UART_Form.resources
+D:\cd\PIC_16F877A\Designs\PIC C\UART\FORM_CS\FORM_CS\obj\Debug\FORM_CS.Properties.Resources.resources
+D:\cd\PIC_16F877A\Designs\PIC C\UART\FORM_CS\FORM_CS\obj\Debug\FORM_CS.csproj.GenerateResource.cache
+D:\cd\PIC_16F877A\Designs\PIC C\UART\FORM_CS\FORM_CS\obj\Debug\FORM_CS.csproj.CoreCompileInputs.cache
+D:\cd\PIC_16F877A\Designs\PIC C\UART\FORM_CS\FORM_CS\obj\Debug\FORM_CS.exe
+D:\cd\PIC_16F877A\Designs\PIC C\UART\FORM_CS\FORM_CS\obj\Debug\FORM_CS.pdb

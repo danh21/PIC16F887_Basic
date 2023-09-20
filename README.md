@@ -2,6 +2,8 @@
     - All basic projects are related to PIC16F887 microcontroller.
     - Source code is compiled by CCS C Compiler.
     - Simulation of projects is executed by Proteus.
+    - Interface of terminal is built by C# Visual Studio.
+    - Setup virtual ports through Virtual Serial Port Driver by Eltima Software.
 
 # Source
     - Led: 
@@ -33,3 +35,5 @@
         + Version 2: reads ADC and displays voltage value on LCD.
 
     - RTC: displays real time clock on LCD.
+
+    - UART: simulates UART communication (setup virtual ports >> start Terminal in FORM_CS >> run proteus).

@@ -1,0 +1,6 @@
+ÀÄmain
+   ÃÄMAIN  0/39  Ram=1
+   ³  ÃÄ@cinit1  (Inline)  Ram=0
+   ³  ÃÄ@PSTRINGC7_9600_62_63  0/90  Ram=4
+   ³  ÀÄ@delay_ms1  0/22  Ram=1
+   ÀÄint_UART  0/21  Ram=1
